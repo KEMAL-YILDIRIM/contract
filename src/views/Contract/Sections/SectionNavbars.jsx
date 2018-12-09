@@ -19,10 +19,10 @@ import CustomInput from "../../../components/CustomInput/CustomInput.jsx";
 import CustomDropdown from "../../../components/CustomDropdown/CustomDropdown.jsx";
 import Button from "../../../components/CustomButtons/Button.jsx";
 
-import navbarsStyle from "src/assets/js/views/componentsSections/navbarsStyle.jsx";
+import navbarsStyle from "../../../assets/js/views/componentsSections/navbarsStyle.jsx";
 
-import image from "src/assets/images/bg.jpg";
-import profileImage from "src/assets/images/faces/avatar.jpg";
+import image from "../../../assets/images/bg.jpg";
+import profileImage from "../../../assets/images/faces/avatar.jpg";
 
 class SectionNavbars extends React.Component {
   render() {
