@@ -5,16 +5,19 @@ import classNames from "classnames";
 import { Link } from "react-router-dom";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
+
 // @material-ui/icons
+
 // core components
-import Header from "components/Header/Header.jsx";
-import Footer from "components/Footer/Footer.jsx";
-import GridContainer from "components/Grid/GridContainer.jsx";
-import GridItem from "components/Grid/GridItem.jsx";
-import Button from "components/CustomButtons/Button.jsx";
-import Parallax from "components/Parallax/Parallax.jsx";
+import Header from "../../components/Header/Header.jsx";
+import Footer from "../../components/Footer/Footer.jsx";
+import GridContainer from "../../components/Grid/GridContainer.jsx";
+import GridItem from "../../components/Grid/GridItem.jsx";
+import Button from "../../components/CustomButtons/Button.jsx";
+import Parallax from "../../components/Parallax/Parallax.jsx";
+import HeaderLinks from "../../components/Header/HeaderLinks.jsx";
+
 // sections for this page
-import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import SectionBasics from "./Sections/SectionBasics.jsx";
 import SectionNavbars from "./Sections/SectionNavbars.jsx";
 import SectionTabs from "./Sections/SectionTabs.jsx";
@@ -28,7 +31,7 @@ import SectionLogin from "./Sections/SectionLogin.jsx";
 import SectionExamples from "./Sections/SectionExamples.jsx";
 import SectionDownload from "./Sections/SectionDownload.jsx";
 
-import componentsStyle from "assets/jss/material-kit-react/views/components.jsx";
+import componentsStyle from "src/assets/js/views/components.jsx";
 
 class Contract extends React.Component {
   render() {
@@ -46,7 +49,7 @@ class Contract extends React.Component {
           }}
           {...rest}
         />
-        <Parallax image={require("assets/img/bg4.jpg")}>
+        <Parallax image={require("src/assets/images/bg7.jpg")}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem>

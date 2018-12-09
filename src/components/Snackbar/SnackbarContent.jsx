@@ -9,7 +9,7 @@ import Icon from "@material-ui/core/Icon";
 // @material-ui/icons
 import Close from "@material-ui/icons/Close";
 
-import snackbarContentStyle from "assets/js/material-kit-react/components/snackbarContentStyle.jsx";
+import snackbarContentStyle from "src/assets/js/components/snackbarContentStyle.jsx";
 
 class SnackbarContent extends React.Component {
   constructor(props) {
