@@ -1,4 +1,4 @@
-import { conatinerFluid } from "assets/js/contractStyles.jsx";
+import { containerFluid } from "assets/js/contractStyles.jsx";
 
 import imagesStyle from "assets/js/imagesStyles.jsx";
 
@@ -7,7 +7,7 @@ const exampleStyle = {
     padding: "70px 0"
   },
   container: {
-    ...conatinerFluid,
+    ...containerFluid,
     textAlign: "center !important"
   },
   ...imagesStyle,

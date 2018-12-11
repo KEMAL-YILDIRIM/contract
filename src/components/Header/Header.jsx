@@ -16,6 +16,8 @@ import Menu from "@material-ui/icons/Menu";
 // core components
 import headerStyle from "assets/js/components/headerStyle.jsx";
 
+import image from "assets/images/artisoft-logo.png";
+
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -67,13 +69,29 @@ class Header extends React.Component {
       fixed,
       absolute
     } = this.props;
+
     const appBarClasses = classNames({
       [classes.appBar]: true,
       [classes[color]]: color,
       [classes.absolute]: absolute,
       [classes.fixed]: fixed
     });
-    const brandComponent = <Button className={classes.title}>{brand}</Button>;
+
+    const brandComponent = <Button className={classes.title}>
+    <img
+                  src={image}
+                  alt="..."
+                  className={
+                    classes.imgRaised +
+                    " " +
+                    classes.logo +
+                    " " +
+                    classes.imgFluid
+                  }
+                />
+    {brand}
+    </Button>;
+    
     return (
       <AppBar className={appBarClasses}>
         <Toolbar className={classes.container}>
@@ -92,6 +110,7 @@ class Header extends React.Component {
           </Hidden>
           <Hidden mdUp>
             <IconButton
+            url=""
               color="inherit"
               aria-label="open drawer"
               onClick={this.handleDrawerToggle}

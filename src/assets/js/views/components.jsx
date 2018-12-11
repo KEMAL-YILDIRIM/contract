@@ -1,10 +1,11 @@
 import { container } from "assets/js/contractStyles.jsx";
 
 const componentsStyle = {
-  container,
+  container,  
   brand: {
     color: "#FFFFFF",
-    textAlign: "left"
+    textAlign: "left",
+    fontFamily:"Segoe"
   },
   title: {
     fontSize: "4.2rem",
