@@ -8,7 +8,7 @@ import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "@material-ui/core/Button";
 
-import paginationStyle from "src/assets/js/components/paginationStyle.jsx";
+import paginationStyle from "assets/js/components/paginationStyle.jsx";
 
 function Pagination({ ...props }) {
   const { classes, pages, color } = props;

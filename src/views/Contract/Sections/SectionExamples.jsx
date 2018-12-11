@@ -6,13 +6,13 @@ import withStyles from "@material-ui/core/styles/withStyles";
 // @material-ui/icons
 
 // core components
-import GridContainer from "../../../components/Grid/GridContainer.jsx";
-import GridItem from "../../../components/Grid/GridItem.jsx";
-import Button from "../../../components/CustomButtons/Button.jsx";
-import exampleStyle from "src/assets/js/views/componentsSections/exampleStyle.jsx";
+import GridContainer from "components/Grid/GridContainer.jsx";
+import GridItem from "components/Grid/GridItem.jsx";
+import Button from "components/CustomButtons/Button.jsx";
+import exampleStyle from "assets/js/views/componentsSections/exampleStyle.jsx";
 
-import landing from "src/assets/images/landing.jpg";
-import profile from "src/assets/images/profile.jpg";
+import landing from "assets/images/landing.jpg";
+import profile from "assets/images/profile.jpg";
 
 class SectionExamples extends React.Component {
   render() {

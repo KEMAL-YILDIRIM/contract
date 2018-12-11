@@ -1,4 +1,4 @@
-import { title } from "assets/jss/material-kit-react.jsx";
+import { title } from "assets/js/contractStyles.jsx";
 
 const productStyle = {
   section: {

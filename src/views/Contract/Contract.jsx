@@ -31,7 +31,7 @@ import SectionLogin from "./Sections/SectionLogin.jsx";
 import SectionExamples from "./Sections/SectionExamples.jsx";
 import SectionDownload from "./Sections/SectionDownload.jsx";
 
-import componentsStyle from "src/assets/js/views/components.jsx";
+import componentsStyle from "assets/js/views/components.jsx";
 
 class Contract extends React.Component {
   render() {
@@ -49,7 +49,7 @@ class Contract extends React.Component {
           }}
           {...rest}
         />
-        <Parallax image={require("src/assets/images/bg7.jpg")}>
+        <Parallax image={require("../../assets/images/bg7.jpg")}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem>
