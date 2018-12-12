@@ -1,2 +1,12 @@
-@import 'app';
-@import 'body';
+@import "core/variables";
+@import "core/mixins";
+
+// Core Components
+@import "core/misc";
+
+// Core Plugins
+
+// @import "plugins/plugin-datetime-picker";
+@import "plugin/plugin-nouislider";
+@import "plugin/plugin-react-datetime";
+@import "plugin/plugin-react-slick";

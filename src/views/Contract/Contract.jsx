@@ -17,6 +17,7 @@ import Parallax from "components/Parallax/Parallax.jsx";
 import HeaderLinks from "components/Header/HeaderLinks.jsx";
 
 // sections for this page
+import SectionParties from "./Sections/SectionParties";
 
 import componentsStyle from "assets/js/views/components.jsx";
 
@@ -43,7 +44,7 @@ class Contract extends React.Component {
                 <div className={classes.brand}>
                   <h1 className={classes.title}>SÖZLEŞME</h1>
                   <h3 className={classes.subtitle}>
-                    Hep orada olduğunu bildiğiniz sağlam bir dayanak.
+                    İşiniz için sağlam bir zemin.
                   </h3>
                 </div>
               </GridItem>
@@ -52,7 +53,9 @@ class Contract extends React.Component {
         </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
+        <SectionParties/>
         </div>
+        
         <Footer/>
       </div>
     );

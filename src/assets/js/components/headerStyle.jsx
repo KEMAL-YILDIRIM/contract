@@ -1,6 +1,5 @@
 import {
   container,
-  containerFluid,
   defaultFont,
   primaryColor,
   infoColor,
@@ -12,14 +11,12 @@ import {
   boxShadow,
   drawerWidth
 } from "assets/js/contractStyles.jsx";
-import imagesStyle from "assets/js/imagesStyles.jsx";
 
 const headerStyle = {
   logo: {
-    ...imagesStyle,
-    ...containerFluid,
     width: "30px",
-    height: "30px"
+    height: "30px",
+    marginRight: "20px"
   },
   appBar: {
     display: "flex",
@@ -61,6 +58,7 @@ const headerStyle = {
   title: {
     ...defaultFont,
     lineHeight: "30px",
+    padding: "0px",
     fontSize: "1.5rem",
     borderRadius: "3px",
     textTransform: "none",

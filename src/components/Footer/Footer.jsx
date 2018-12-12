@@ -28,20 +28,20 @@ function Footer({ ...props }) {
           <List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/"
+                href=""
                 className={classes.block}
                 target="_blank"
               >
-                Creative Tim
+                Artı Soft
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a
-                href="https://www.creative-tim.com/presentation"
+                href=""
                 className={classes.block}
                 target="_blank"
               >
-                About us
+                Hakkımızda
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
@@ -50,7 +50,7 @@ function Footer({ ...props }) {
                 className={classes.block}
                 target="_blank"
               >
-                Blog
+                Portföy
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
@@ -59,22 +59,21 @@ function Footer({ ...props }) {
                 className={classes.block}
                 target="_blank"
               >
-                Licenses
+                Lisans
               </a>
             </ListItem>
           </List>
         </div>
         <div className={classes.right}>
-          &copy; {1900 + new Date().getYear()} , made with{" "}
-          <Favorite className={classes.icon} /> by{" "}
+          &copy; {1900 + new Date().getYear()} , {" "}
           <a
             href="https://www.creative-tim.com"
             className={aClasses}
             target="_blank"
           >
-            Creative Tim
+            Artı Soft
           </a>{" "}
-          for a better web.
+          tarafından yapılmıştır.
         </div>
       </div>
     </footer>

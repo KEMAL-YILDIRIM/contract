@@ -21,7 +21,7 @@ import CustomInput from "components/CustomInput/CustomInput.jsx";
 import CustomLinearProgress from "components/CustomLinearProgress/CustomLinearProgress.jsx";
 import Paginations from "components/Pagination/Pagination.jsx";
 import Badge from "components/Badge/Badge.jsx";
-
+// component style
 import basicsStyle from "assets/js/views/componentsSections/basicsStyle.jsx";
 
 class SectionBasics extends React.Component {
