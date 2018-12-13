@@ -1,6 +1,6 @@
 import {boxShadow, container, title} from "assets/js/contractStyles";
 
-const termsStyles = {
+const templateStyles = {
     section: {
         padding: "70px 0"
     },
@@ -27,4 +27,4 @@ const termsStyles = {
     ...boxShadow
 }
 
-export default termsStyles;
+export default templateStyles;

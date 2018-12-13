@@ -1,7 +1,7 @@
 import {boxShadow, container, title} from "assets/js/contractStyles";
 
 const partiesStyles = {
-    sections: {
+    section: {
         padding: "70px 0"
     },
     container,

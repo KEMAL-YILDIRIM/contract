@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // @material-ui/core components
 import withStyle from "@material-ui/core/styles/withStyles";
@@ -18,7 +18,7 @@ class SectionParties extends React.Component {
   render() {
     const {classes} = this.props;
     return (
-      <div className={classes.sections} id="parties">
+      <div className={classes.section} id="parties">
         <div className={classes.container}>
           <div className={classes.title}>
             <h2>Taraflar</h2>

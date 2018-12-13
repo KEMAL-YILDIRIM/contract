@@ -1,6 +1,6 @@
 import { container } from "assets/js/contractStyles.jsx";
 
-const componentsStyle = {
+const componentsStyles = {
   container,  
   brand: {
     color: "#FFFFFF",
@@ -42,4 +42,4 @@ const componentsStyle = {
   }
 };
 
-export default componentsStyle;
+export default componentsStyles;
