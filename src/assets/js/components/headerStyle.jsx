@@ -56,7 +56,9 @@ const headerStyle = {
     flex: 1
   },
   title: {
-    ...defaultFont,
+    fontFamily: '"Segoe"',
+    fontWeight: "300",
+    lineHeight: "1.5em",
     lineHeight: "30px",
     padding: "0px",
     fontSize: "1.5rem",

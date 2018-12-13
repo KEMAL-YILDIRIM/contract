@@ -1,12 +1,9 @@
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
-// react components for routing our app without refresh
-// import { Link } from "react-router-dom";
-// @material-ui/core components
+// react components for routing our app without refresh import { Link } from
+// "react-router-dom"; @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
-
-// @material-ui/icons
 
 // core components
 import Header from "components/Header/Header.jsx";
@@ -18,26 +15,32 @@ import HeaderLinks from "components/Header/HeaderLinks.jsx";
 
 // sections for this page
 import SectionParties from "./Sections/SectionParties";
+import SectionTerms from "./Sections/SectionTerms";
 
-import componentsStyle from "assets/js/views/components.jsx";
+// style
+import componentsStyle from "assets/js/views/contractPage.jsx";
 
 class Contract extends React.Component {
   render() {
-    const { classes, ...rest } = this.props;
+    const {
+      classes,
+      ...rest
+    } = this.props;
     return (
       <div>
         <Header
           brand="Artı Soft"
-          rightLinks={<HeaderLinks />}
+          rightLinks={<HeaderLinks/>}
           fixed
           color="transparent"
           changeColorOnScroll={{
-            height: 400,
-            color: "white"
-          }}
-          {...rest}
-        />
-        <Parallax image={require("assets/images/bg7.jpg")}>
+          height: 400,
+          color: "white"
+        }}
+          {...rest}/>
+        <Parallax
+          filter={{}}
+          image={require("assets/images/business-relationship.png")}>
           <div className={classes.container}>
             <GridContainer>
               <GridItem>
@@ -53,9 +56,12 @@ class Contract extends React.Component {
         </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
-        <SectionParties/>
+          <SectionParties/>          
         </div>
-        
+        <div className={classNames(classes.main, classes.sub)}>
+          <SectionTerms/>          
+        </div>
+
         <Footer/>
       </div>
     );

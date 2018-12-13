@@ -12,7 +12,7 @@ import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import CustomInput from "components/CustomInput/CustomInput";
 // styles
-import partiesStyle from "assets/js/views/componentsSections/partiesStyle";
+import componentsStyle from "assets/js/views/componentsSections/partiesStyle";
 
 class SectionParties extends React.Component {
   render() {
@@ -33,9 +33,8 @@ class SectionParties extends React.Component {
                   labelText="Firma"
                   id="owner_company"
                   formControlProps={{
-                    fullWidth: true
-                  }}
-                />
+                  fullWidth: true
+                }}/>
               </GridItem>
               <GridItem xs={12} sm={12} md={2} lg={2}>
                 <CustomInput
@@ -57,9 +56,8 @@ class SectionParties extends React.Component {
                   labelText="Görev"
                   id="float"
                   formControlProps={{
-                    fullWidth: true
-                  }}
-                />
+                  fullWidth: true
+                }}/>
               </GridItem>
               <GridItem xs={12} sm={12} md={2} lg={2}>
                 <CustomInput
@@ -98,14 +96,13 @@ class SectionParties extends React.Component {
               <h3>Yüklenici</h3>
             </div>
             <GridContainer>
-            <GridItem xs={12} sm={12} md={2} lg={2}>
+              <GridItem xs={12} sm={12} md={2} lg={2}>
                 <CustomInput
                   labelText="Firma"
                   id="owner_company"
                   formControlProps={{
-                    fullWidth: true
-                  }}
-                />
+                  fullWidth: true
+                }}/>
               </GridItem>
               <GridItem xs={12} sm={12} md={2} lg={2}>
                 <CustomInput
@@ -127,9 +124,8 @@ class SectionParties extends React.Component {
                   labelText="Görev"
                   id="float"
                   formControlProps={{
-                    fullWidth: true
-                  }}
-                />
+                  fullWidth: true
+                }}/>
               </GridItem>
               <GridItem xs={12} sm={12} md={2} lg={2}>
                 <CustomInput
@@ -169,4 +165,4 @@ class SectionParties extends React.Component {
   }
 }
 
-export default withStyle(partiesStyle)(SectionParties);
+export default withStyle(componentsStyle)(SectionParties);

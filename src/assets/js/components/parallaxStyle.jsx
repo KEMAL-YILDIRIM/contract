@@ -14,11 +14,8 @@ const parallaxStyle = {
   },
   filter: {
     "&:before": {
-      background: "rgba(0, 0, 0, 0.5)"
-    },
-    "&:after,&:before": {
       position: "absolute",
-      zIndex: "1",
+      background: "rgba(32,35,42,0.5)",
       width: "100%",
       height: "100%",
       display: "block",

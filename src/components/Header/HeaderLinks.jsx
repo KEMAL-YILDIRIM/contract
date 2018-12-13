@@ -35,6 +35,9 @@ function HeaderLinks({ ...props }) {
             <a href="#parties" className={classes.dropdownLink}>
               Taraflar
             </a>,
+            <a href="#terms" className={classes.dropdownLink}>
+              Şartlar
+            </a>,
             <a
               href=""
               target="_blank"
