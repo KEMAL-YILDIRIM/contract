@@ -28,7 +28,7 @@ function RegularButton({ ...props }) {
     className,
     ...rest
   } = props;
-  const btnClasses = classNames({
+  const buttonClasses = classNames({
     [classes.button]: true,
     [classes[size]]: size,
     [classes[color]]: color,
@@ -42,7 +42,7 @@ function RegularButton({ ...props }) {
     [className]: className
   });
   return (
-    <Button {...rest} className={btnClasses}>
+    <Button {...rest} className={buttonClasses}>
       {children}
     </Button>
   );

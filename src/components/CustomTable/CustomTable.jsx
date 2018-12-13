@@ -8,7 +8,7 @@ import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 // core components
-import CustomButton from "../CustomButtons/Button"
+import Button from "../CustomButtons/Button"
 // styles
 import tableStyle from "assets/js/components/tableStyle.jsx";
 
@@ -26,18 +26,18 @@ function CustomTable({
                 {tableHead.map((prop, key) => {
                   return (
                     <TableCell
-                      className={classes.tableCell + " " + classes.tableHeadCell}
+                      className={classes.tableHeadCell}
                       key={key}>
                       {prop}
                     </TableCell>
                   );
                 })}
-                <TableCell
-                  className={classes.tableCell + " " + classes.tableHeadCell}>
+                <TableCell                
+                className={classes.tableHeadCell}>
                   {"Düzenle"}
                 </TableCell>
                 <TableCell
-                  className={classes.tableCell + " " + classes.tableHeadCell}>
+                className={classes.tableHeadCell}>
                   {"Sil"}
                 </TableCell>
               </TableRow>
@@ -55,13 +55,27 @@ function CustomTable({
                     </TableCell>
                   );
                 })}
-                <TableCell className={classes.tableCell} 
-                  key={"edit"}>
-                  {<CustomButton/>}
+                <TableCell 
+                  key={"edit"}
+                  className={classes.tableCell}>
+                  {
+                  <Button 
+                  className={classes.tableButton}
+                  color="transparent">
+                    <i className={classes.successTableHeader + " fas fa-edit"} />
+                  </Button>
+                }
                 </TableCell>
-                <TableCell className={classes.tableCell} 
-                  key={"Sil"}>
-                  {<CustomButton/>}
+                <TableCell 
+                  key={"Sil"}
+                  className={classes.tableButton}>
+                  {
+                  <Button 
+                  className={classes.tableCell}
+                  color="transparent">
+                    <i className={classes.dangerTableHeader + " far fa-trash-alt"} />
+                  </Button>
+                }
                 </TableCell>
               </TableRow>
             );
@@ -73,7 +87,7 @@ function CustomTable({
 }
 
 CustomTable.defaultProps = {
-  tableHeaderColor: "rose"
+  tableHeaderColor: "primary"
 };
 
 CustomTable.propTypes = {

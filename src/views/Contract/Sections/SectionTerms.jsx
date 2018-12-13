@@ -30,7 +30,6 @@ class SectionTerms extends React.Component {
                                     </CardHeader>
                                     <CardBody>
                                         <CustomTable
-                                            tableHeaderColor="rose"
                                             tableHead={["Konu", "Madde", "Sayfa", "Açıklama"]}
                                             tableData={[
                                             [
@@ -40,7 +39,7 @@ class SectionTerms extends React.Component {
                                         ]}/>
                                     </CardBody>
                                     <CardFooter>
-                                        <p className={classes.cardCategoryWhite}>     --------></p>
+                                        <p className={classes.cardCategoryWhite}></p>
                                     </CardFooter>
                                 </Card>
                             </GridItem>

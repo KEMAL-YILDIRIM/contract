@@ -42,13 +42,17 @@ const tableStyle = theme => ({
   tableHeadCell: {
     color: "inherit",
     ...defaultFont,
-    fontSize: "1em"
+    fontSize: "1em",
+    fontWeight: "bolder",
+    padding: "12px 8px"
+  },
+  tableButton:{
+    padding:"12px 0px"
   },
   tableCell: {
     ...defaultFont,
     lineHeight: "1.42857143",
-    padding: "12px 8px",
-    verticalAlign: "middle"
+    padding: "12px 8px"
   },
   tableResponsive: {
     width: "100%",
