@@ -14,7 +14,7 @@ import componentsStyle from "assets/js/views/componentsSections/termsStyle"
 
 class SectionTerms extends React.Component {
     render() {
-        const {classes, contractName, subtitle} = this.props;
+        const {classes} = this.props;
         return (
             <div className={classes.section} id="terms">
                 <div className={classes.container}>
@@ -26,23 +26,22 @@ class SectionTerms extends React.Component {
                             <GridItem xs={12} sm={12} md={12}>
                                 <Card>
                                     <CardHeader color="primary">
-                                        <h4 className={classes.cardTitleWhite}>{contractName}</h4>
-                                        <p className={classes.cardCategoryWhite}>{subtitle}</p>
+                                        <h4 className={classes.cardTitleWhite}>Mitsubishi Klima</h4>
                                     </CardHeader>
                                     <CardBody>
                                         <CustomTable
                                             tableHeaderColor="rose"
-                                            tableHead={["Name", "Country", "City", "Salary"]}
+                                            tableHead={["Konu", "Madde", "Sayfa", "Açıklama"]}
                                             tableData={[
                                             [
-                                                "Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"
+                                                "Bakım", "3", "35", "Periyodik bakım maliyetleri sözleşme dışındadır."
                                             ],
-                                            [
-                                                "Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"
-                                            ]
+                                            ["İade", "5", "14", "İade ve değişim için bedel yüklenici tarafından kaşılanır."]
                                         ]}/>
                                     </CardBody>
-                                    <CardFooter/>
+                                    <CardFooter>
+                                        <p className={classes.cardCategoryWhite}>     --------></p>
+                                    </CardFooter>
                                 </Card>
                             </GridItem>
                         </GridContainer>

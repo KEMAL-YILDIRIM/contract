@@ -8,29 +8,42 @@ import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
 // core components
+import CustomButton from "../CustomButtons/Button"
+// styles
 import tableStyle from "assets/js/components/tableStyle.jsx";
 
-function CustomTable({ ...props }) {
-  const { classes, tableHead, tableData, tableHeaderColor } = props;
+function CustomTable({
+  ...props
+}) {
+  const {classes, tableHead, tableData, tableHeaderColor} = props;
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
-        {tableHead !== undefined ? (
-          <TableHead className={classes[tableHeaderColor + "TableHeader"]}>
-            <TableRow>
-              {tableHead.map((prop, key) => {
-                return (
-                  <TableCell
-                    className={classes.tableCell + " " + classes.tableHeadCell}
-                    key={key}
-                  >
-                    {prop}
-                  </TableCell>
-                );
-              })}
-            </TableRow>
-          </TableHead>
-        ) : null}
+        {tableHead !== undefined
+          ? (
+            <TableHead className={classes[tableHeaderColor + "TableHeader"]}>
+              <TableRow>
+                {tableHead.map((prop, key) => {
+                  return (
+                    <TableCell
+                      className={classes.tableCell + " " + classes.tableHeadCell}
+                      key={key}>
+                      {prop}
+                    </TableCell>
+                  );
+                })}
+                <TableCell
+                  className={classes.tableCell + " " + classes.tableHeadCell}>
+                  {"Düzenle"}
+                </TableCell>
+                <TableCell
+                  className={classes.tableCell + " " + classes.tableHeadCell}>
+                  {"Sil"}
+                </TableCell>
+              </TableRow>
+            </TableHead>
+          )
+          : null}
         <TableBody>
           {tableData.map((prop, key) => {
             return (
@@ -42,6 +55,14 @@ function CustomTable({ ...props }) {
                     </TableCell>
                   );
                 })}
+                <TableCell className={classes.tableCell} 
+                  key={"edit"}>
+                  {<CustomButton/>}
+                </TableCell>
+                <TableCell className={classes.tableCell} 
+                  key={"Sil"}>
+                  {<CustomButton/>}
+                </TableCell>
               </TableRow>
             );
           })}
