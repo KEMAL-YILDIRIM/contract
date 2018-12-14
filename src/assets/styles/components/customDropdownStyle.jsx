@@ -1,18 +1,4 @@
-import {
-  defaultFont,
-  primaryColor,
-  primaryBoxShadow,
-  infoColor,
-  infoBoxShadow,
-  successColor,
-  successBoxShadow,
-  warningColor,
-  warningBoxShadow,
-  dangerColor,
-  dangerBoxShadow,
-  roseColor,
-  roseBoxShadow
-} from "assets/js/contractStyles.jsx";
+import {defaultFont, colors, coloredBoxShadow} from "assets/styles/contractStyles.jsx";
 
 const customDropdownStyle = theme => ({
   popperClose: {
@@ -38,7 +24,11 @@ const customDropdownStyle = theme => ({
   },
   pooperResponsive: {
     zIndex: "1200",
-    [theme.breakpoints.down("sm")]: {
+    [
+      theme
+        .breakpoints
+        .down("sm")
+    ]: {
       zIndex: "1640",
       position: "static",
       float: "none",
@@ -67,52 +57,18 @@ const customDropdownStyle = theme => ({
   },
   blackHover: {
     "&:hover": {
-      boxShadow:
-        "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(33, 33, 33, 0.4)",
+      boxShadow: "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(33, 33, 33, 0.4)",
       backgroundColor: "#212121",
       color: "#fff"
     }
   },
-  primaryHover: {
-    "&:hover": {
-      backgroundColor: primaryColor,
-      color: "#FFFFFF",
-      ...primaryBoxShadow
-    }
-  },
-  infoHover: {
-    "&:hover": {
-      backgroundColor: infoColor,
-      color: "#FFFFFF",
-      ...infoBoxShadow
-    }
-  },
-  successHover: {
-    "&:hover": {
-      backgroundColor: successColor,
-      color: "#FFFFFF",
-      ...successBoxShadow
-    }
-  },
-  warningHover: {
-    "&:hover": {
-      backgroundColor: warningColor,
-      color: "#FFFFFF",
-      ...warningBoxShadow
-    }
-  },
-  dangerHover: {
-    "&:hover": {
-      backgroundColor: dangerColor,
-      color: "#FFFFFF",
-      ...dangerBoxShadow
-    }
-  },
-  roseHover: {
-    "&:hover": {
-      backgroundColor: roseColor,
-      color: "#FFFFFF",
-      ...roseBoxShadow
+  buttonHover: (selectedColor) => {
+    return {
+      "&:hover": {
+        backgroundColor: selectedColor,
+        color: "#FFFFFF",
+        ...coloredBoxShadow(colors.primary)
+      }
     }
   },
   dropdownItemRTL: {

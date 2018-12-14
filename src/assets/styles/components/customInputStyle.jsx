@@ -1,9 +1,7 @@
 import {
-  primaryColor,
-  dangerColor,
-  successColor,
+  colors,
   defaultFont
-} from "assets/js/contractStyles.jsx";
+} from "assets/styles/contractStyles.jsx";
 
 const customInputStyle = {
   disabled: {
@@ -17,17 +15,17 @@ const customInputStyle = {
       borderWidth: "1px !important"
     },
     "&:after": {
-      borderColor: primaryColor
+      borderColor: colors.primary
     }
   },
   underlineError: {
     "&:after": {
-      borderColor: dangerColor
+      borderColor: colors.danger
     }
   },
   underlineSuccess: {
     "&:after": {
-      borderColor: successColor
+      borderColor: colors.success
     }
   },
   whiteUnderline: {
@@ -50,10 +48,10 @@ const customInputStyle = {
     }
   },
   labelRootError: {
-    color: dangerColor + " !important"
+    color: colors.danger + " !important"
   },
   labelRootSuccess: {
-    color: successColor + " !important"
+    color: colors.success + " !important"
   },
   formControl: {
     margin: "0 0 17px 0",

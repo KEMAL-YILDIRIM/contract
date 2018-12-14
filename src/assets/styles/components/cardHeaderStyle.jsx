@@ -5,7 +5,7 @@ import {
   infoCardHeader,
   primaryCardHeader,
   roseCardHeader
-} from "assets/js/contractStyles.jsx";
+} from "assets/styles/contractStyles.jsx";
 const cardHeaderStyle = {
   cardHeader: {
     padding: "0.75rem 1.25rem",

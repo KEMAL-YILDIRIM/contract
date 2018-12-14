@@ -1,16 +1,11 @@
 import {
   container,
-  defaultFont,
-  primaryColor,
-  infoColor,
-  successColor,
-  warningColor,
-  dangerColor,
-  roseColor,
+  colors,
   transition,
   boxShadow,
   drawerWidth
-} from "assets/js/contractStyles.jsx";
+} from "assets/styles/contractStyles.jsx";
+import { coloredBoxShadow } from "../contractStyles";
 
 const headerStyle = {
   logo: {
@@ -59,7 +54,6 @@ const headerStyle = {
     fontFamily: '"Segoe"',
     fontWeight: "300",
     lineHeight: "1.5em",
-    lineHeight: "30px",
     padding: "0px",
     fontSize: "1.5rem",
     borderRadius: "3px",
@@ -74,34 +68,34 @@ const headerStyle = {
     margin: "20px 10px"
   },
   primary: {
-    backgroundColor: primaryColor,
+    backgroundColor: colors.primary,
     color: "#FFFFFF",
-    boxShadow: "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(156, 39, 176, 0.46)"
+    boxShadow: coloredBoxShadow(colors.primary)
   },
   info: {
-    backgroundColor: infoColor,
+    backgroundColor: colors.info,
     color: "#FFFFFF",
-    boxShadow: "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(0, 188, 212, 0.46)"
+    boxShadow: coloredBoxShadow(colors.info)
   },
   success: {
-    backgroundColor: successColor,
+    backgroundColor: colors.success,
     color: "#FFFFFF",
-    boxShadow: "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(76, 175, 80, 0.46)"
+    boxShadow: coloredBoxShadow(colors.success)
   },
   warning: {
-    backgroundColor: warningColor,
+    backgroundColor: colors.warning,
     color: "#FFFFFF",
-    boxShadow: "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(255, 152, 0, 0.46)"
+    boxShadow: coloredBoxShadow(colors.warning)
   },
   danger: {
-    backgroundColor: dangerColor,
+    backgroundColor: colors.danger,
     color: "#FFFFFF",
-    boxShadow: "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(244, 67, 54, 0.46)"
+    boxShadow: coloredBoxShadow(colors.danger)
   },
   rose: {
-    backgroundColor: roseColor,
+    backgroundColor: colors.rose,
     color: "#FFFFFF",
-    boxShadow: "0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 12px -5px rgba(233, 30, 99, 0.46)"
+    boxShadow: coloredBoxShadow(colors.rose)
   },
   transparent: {
     backgroundColor: "transparent !important",

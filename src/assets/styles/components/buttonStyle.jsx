@@ -1,12 +1,6 @@
 import {
-  grayColor,
-  roseColor,
-  primaryColor,
-  infoColor,
-  successColor,
-  warningColor,
-  dangerColor
-} from "assets/js/contractStyles.jsx";
+  colors
+} from "assets/styles/contractStyles.jsx";
 
 const buttonStyle = {
   button: {
@@ -36,7 +30,7 @@ const buttonStyle = {
     cursor: "pointer",
     "&:hover,&:focus": {
       color: "#FFFFFF",
-      backgroundColor: grayColor,
+      backgroundColor: colors.gray,
       boxShadow:
         "0 14px 26px -12px rgba(153, 153, 153, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(153, 153, 153, 0.2)"
     },
@@ -75,61 +69,61 @@ const buttonStyle = {
     width: "100%"
   },
   primary: {
-    backgroundColor: primaryColor,
+    backgroundColor: colors.primary,
     boxShadow:
       "0 2px 2px 0 rgba(156, 39, 176, 0.14), 0 3px 1px -2px rgba(156, 39, 176, 0.2), 0 1px 5px 0 rgba(156, 39, 176, 0.12)",
     "&:hover,&:focus": {
-      backgroundColor: primaryColor,
+      backgroundColor: colors.primary,
       boxShadow:
         "0 14px 26px -12px rgba(156, 39, 176, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(156, 39, 176, 0.2)"
     }
   },
   info: {
-    backgroundColor: infoColor,
+    backgroundColor: colors.info,
     boxShadow:
       "0 2px 2px 0 rgba(0, 188, 212, 0.14), 0 3px 1px -2px rgba(0, 188, 212, 0.2), 0 1px 5px 0 rgba(0, 188, 212, 0.12)",
     "&:hover,&:focus": {
-      backgroundColor: infoColor,
+      backgroundColor: colors.info,
       boxShadow:
         "0 14px 26px -12px rgba(0, 188, 212, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 188, 212, 0.2)"
     }
   },
   success: {
-    backgroundColor: successColor,
+    backgroundColor: colors.success,
     boxShadow:
       "0 2px 2px 0 rgba(76, 175, 80, 0.14), 0 3px 1px -2px rgba(76, 175, 80, 0.2), 0 1px 5px 0 rgba(76, 175, 80, 0.12)",
     "&:hover,&:focus": {
-      backgroundColor: successColor,
+      backgroundColor: colors.success,
       boxShadow:
         "0 14px 26px -12px rgba(76, 175, 80, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(76, 175, 80, 0.2)"
     }
   },
   warning: {
-    backgroundColor: warningColor,
+    backgroundColor: colors.warning,
     boxShadow:
       "0 2px 2px 0 rgba(255, 152, 0, 0.14), 0 3px 1px -2px rgba(255, 152, 0, 0.2), 0 1px 5px 0 rgba(255, 152, 0, 0.12)",
     "&:hover,&:focus": {
-      backgroundColor: warningColor,
+      backgroundColor: colors.warning,
       boxShadow:
         "0 14px 26px -12px rgba(255, 152, 0, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(255, 152, 0, 0.2)"
     }
   },
   danger: {
-    backgroundColor: dangerColor,
+    backgroundColor: colors.danger,
     boxShadow:
       "0 2px 2px 0 rgba(244, 67, 54, 0.14), 0 3px 1px -2px rgba(244, 67, 54, 0.2), 0 1px 5px 0 rgba(244, 67, 54, 0.12)",
     "&:hover,&:focus": {
-      backgroundColor: dangerColor,
+      backgroundColor: colors.danger,
       boxShadow:
         "0 14px 26px -12px rgba(244, 67, 54, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(244, 67, 54, 0.2)"
     }
   },
   rose: {
-    backgroundColor: roseColor,
+    backgroundColor: colors.rose,
     boxShadow:
       "0 2px 2px 0 rgba(233, 30, 99, 0.14), 0 3px 1px -2px rgba(233, 30, 99, 0.2), 0 1px 5px 0 rgba(233, 30, 99, 0.12)",
     "&:hover,&:focus": {
-      backgroundColor: roseColor,
+      backgroundColor: colors.rose,
       boxShadow:
         "0 14px 26px -12px rgba(233, 30, 99, 0.42), 0 4px 23px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(233, 30, 99, 0.2)"
     }
@@ -137,7 +131,7 @@ const buttonStyle = {
   white: {
     "&,&:focus,&:hover,&:visited": {
       backgroundColor: "#FFFFFF",
-      color: grayColor
+      color: colors.gray
     }
   },
   twitter: {
@@ -196,32 +190,32 @@ const buttonStyle = {
     },
     "&$primary": {
       "&,&:focus,&:hover,&:visited": {
-        color: primaryColor
+        color: colors.primary
       }
     },
     "&$info": {
       "&,&:focus,&:hover,&:visited": {
-        color: infoColor
+        color: colors.info
       }
     },
     "&$success": {
       "&,&:focus,&:hover,&:visited": {
-        color: successColor
+        color: colors.success
       }
     },
     "&$warning": {
       "&,&:focus,&:hover,&:visited": {
-        color: warningColor
+        color: colors.warning
       }
     },
     "&$rose": {
       "&,&:focus,&:hover,&:visited": {
-        color: roseColor
+        color: colors.rose
       }
     },
     "&$danger": {
       "&,&:focus,&:hover,&:visited": {
-        color: dangerColor
+        color: colors.danger
       }
     },
     "&$twitter": {

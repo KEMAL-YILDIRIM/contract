@@ -12,7 +12,7 @@ import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import CustomInput from "components/CustomInput/CustomInput";
 // styles
-import componentsStyle from "assets/js/views/componentsSections/partiesStyle";
+import componentsStyle from "assets/styles/views/componentsSections/partiesStyle";
 
 class SectionParties extends React.Component {
   render() {

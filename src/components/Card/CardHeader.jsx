@@ -6,7 +6,8 @@ import PropTypes from "prop-types";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
-import cardHeaderStyle from "assets/js/components/cardHeaderStyle.jsx";
+import cardHeaderStyle from "assets/styles/components/cardHeaderStyle.jsx";
+import {colors} from "assets/styles/contractStyles";
 
 function CardHeader({ ...props }) {
   const { classes, className, children, color, plain, ...rest } = props;
@@ -26,7 +27,7 @@ function CardHeader({ ...props }) {
 CardHeader.propTypes = {
   classes: PropTypes.object.isRequired,
   className: PropTypes.string,
-  color: PropTypes.oneOf(["warning", "success", "danger", "info", "primary"]),
+  color: PropTypes.oneOf(Object.getOwnPropertyNames(colors)),
   plain: PropTypes.bool
 };
 

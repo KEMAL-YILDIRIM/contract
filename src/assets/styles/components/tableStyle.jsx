@@ -1,36 +1,6 @@
-import {
-  warningColor,
-  primaryColor,
-  dangerColor,
-  successColor,
-  infoColor,
-  roseColor,
-  grayColor,
-  defaultFont
-} from "assets/js/contractStyles.jsx";
+import {colors,defaultFont} from "assets/styles/contractStyles.jsx";
 
 const tableStyle = theme => ({
-  warningTableHeader: {
-    color: warningColor
-  },
-  primaryTableHeader: {
-    color: primaryColor
-  },
-  dangerTableHeader: {
-    color: dangerColor
-  },
-  successTableHeader: {
-    color: successColor
-  },
-  infoTableHeader: {
-    color: infoColor
-  },
-  roseTableHeader: {
-    color: roseColor
-  },
-  grayTableHeader: {
-    color: grayColor
-  },
   table: {
     marginBottom: "0",
     width: "100%",
@@ -46,8 +16,8 @@ const tableStyle = theme => ({
     fontWeight: "bolder",
     padding: "12px 8px"
   },
-  tableButton:{
-    padding:"12px 0px"
+  tableButton: {
+    padding: "12px 0px"
   },
   tableCell: {
     ...defaultFont,
@@ -58,6 +28,12 @@ const tableStyle = theme => ({
     width: "100%",
     marginTop: theme.spacing.unit * 3,
     overflowX: "auto"
+  },
+  successColor:{
+    color:colors.success
+  },
+  dangerColor:{
+    color:colors.danger
   }
 });
 

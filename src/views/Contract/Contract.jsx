@@ -1,7 +1,8 @@
 import React from "react";
+
 // nodejs library that concatenates classes
 import classNames from "classnames";
-// react components for routing our app without refresh import { Link } from
+
 // "react-router-dom"; @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 
@@ -18,7 +19,7 @@ import SectionParties from "./Sections/SectionParties";
 import SectionTerms from "./Sections/SectionTerms";
 
 // style
-import componentsStyle from "assets/js/views/contractPage.jsx";
+import componentsStyle from "assets/styles/views/contractPage.jsx";
 
 class Contract extends React.Component {
   render() {
@@ -39,7 +40,7 @@ class Contract extends React.Component {
         }}
           {...rest}/>
         <Parallax
-          filter={{}}
+          filter={true}
           image={require("assets/images/business-relationship.png")}>
           <div className={classes.container}>
             <GridContainer>

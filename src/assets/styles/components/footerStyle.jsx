@@ -1,4 +1,4 @@
-import { container, primaryColor } from "assets/js/contractStyles.jsx";
+import { container, colors } from "assets/styles/contractStyles.jsx";
 
 const footerStyle = {
   block: {
@@ -29,7 +29,7 @@ const footerStyle = {
     position: "relative"
   },
   a: {
-    color: primaryColor,
+    color: colors.primary,
     textDecoration: "none",
     backgroundColor: "transparent"
   },

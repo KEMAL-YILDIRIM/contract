@@ -1,4 +1,4 @@
-import { container } from "assets/js/contractStyles.jsx";
+import { container } from "assets/styles/contractStyles.jsx";
 
 const componentsStyles = {
   container,  

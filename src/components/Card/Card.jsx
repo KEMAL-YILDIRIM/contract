@@ -6,7 +6,7 @@ import PropTypes from "prop-types";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 // core components
-import cardStyle from "assets/js/components/cardStyle.jsx";
+import cardStyle from "assets/styles/components/cardStyle.jsx";
 
 function Card({ ...props }) {
   const { classes, className, children, plain, carousel, ...rest } = props;

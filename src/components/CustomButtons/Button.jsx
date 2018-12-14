@@ -1,6 +1,8 @@
 import React from "react";
+
 // nodejs library to set properties for components
 import PropTypes from "prop-types";
+
 // nodejs library that concatenates classes
 import classNames from "classnames";
 
@@ -8,9 +10,8 @@ import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "@material-ui/core/Button";
 
-// core components
-
-import buttonStyle from "assets/js/components/buttonStyle.jsx";
+// style
+import buttonStyle from "assets/styles/components/buttonStyle.jsx";
 
 function RegularButton({ ...props }) {
   const {
@@ -48,22 +49,24 @@ function RegularButton({ ...props }) {
   );
 }
 
+const buttonColors = [
+  "primary",
+  "info",
+  "success",
+  "warning",
+  "danger",
+  "rose",
+  "white",
+  "facebook",
+  "twitter",
+  "google",
+  "github",
+  "transparent"
+];
+
 RegularButton.propTypes = {
   classes: PropTypes.object.isRequired,
-  color: PropTypes.oneOf([
-    "primary",
-    "info",
-    "success",
-    "warning",
-    "danger",
-    "rose",
-    "white",
-    "facebook",
-    "twitter",
-    "google",
-    "github",
-    "transparent"
-  ]),
+  color: PropTypes.oneOf(buttonColors),
   size: PropTypes.oneOf(["sm", "lg"]),
   simple: PropTypes.bool,
   round: PropTypes.bool,

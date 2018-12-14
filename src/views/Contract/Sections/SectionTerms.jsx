@@ -10,7 +10,7 @@ import CardHeader from "components/Card/CardHeader";
 import CardBody from "components/Card/CardBody";
 import CardFooter from "components/Card/CardFooter";
 // styles
-import componentsStyle from "assets/js/views/componentsSections/termsStyle"
+import componentsStyle from "assets/styles/views/componentsSections/termsStyle"
 
 class SectionTerms extends React.Component {
     render() {
@@ -25,7 +25,7 @@ class SectionTerms extends React.Component {
                         <GridContainer>
                             <GridItem xs={12} sm={12} md={12}>
                                 <Card>
-                                    <CardHeader color="primary">
+                                    <CardHeader color="success">
                                         <h4 className={classes.cardTitleWhite}>Mitsubishi Klima</h4>
                                     </CardHeader>
                                     <CardBody>

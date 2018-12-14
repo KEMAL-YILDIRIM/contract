@@ -5,7 +5,7 @@ import withStyles from "@material-ui/core/styles/withStyles";
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 // style
-import componentsStyles from "assets/js/components"
+import componentsStyles from "assets/styles/components"
 
 class template extends React.Component {
     render() {

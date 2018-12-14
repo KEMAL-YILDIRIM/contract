@@ -1,4 +1,4 @@
-import {boxShadow, container, title} from "assets/js/contractStyles";
+import {boxShadow, container, title} from "assets/styles/contractStyles";
 
 const templateStyles = {
     section: {

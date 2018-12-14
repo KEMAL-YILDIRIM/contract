@@ -14,7 +14,7 @@ import Drawer from "@material-ui/core/Drawer";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
-import headerStyle from "assets/js/components/headerStyle.jsx";
+import headerStyle from "assets/styles/components/headerStyle.jsx";
 
 import image from "assets/images/artisoft-logo.png";
 
