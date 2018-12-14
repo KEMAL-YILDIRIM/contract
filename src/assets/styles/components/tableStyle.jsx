@@ -16,8 +16,15 @@ const tableStyle = theme => ({
     fontWeight: "bolder",
     padding: "12px 8px"
   },
+  tableHeadCellDelete: {
+    color: "inherit",
+    ...defaultFont,
+    fontSize: "1em",
+    fontWeight: "bolder",
+    padding: "25px"
+  },
   tableButton: {
-    padding: "12px 0px"
+    padding: "15px"
   },
   tableCell: {
     ...defaultFont,
@@ -29,11 +36,13 @@ const tableStyle = theme => ({
     marginTop: theme.spacing.unit * 3,
     overflowX: "auto"
   },
-  successColor:{
-    color:colors.success
+  editButton:{
+    color:colors.success,
+    marginRight:"0px !important"
   },
-  dangerColor:{
-    color:colors.danger
+  deleteButton:{
+    color:colors.danger,    
+    marginRight:"0px !important"
   }
 });
 

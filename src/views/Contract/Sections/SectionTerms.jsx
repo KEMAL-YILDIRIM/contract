@@ -1,6 +1,7 @@
 import React from "react";
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
+import Fab from "@material-ui/core/Fab";
 // core components
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
@@ -11,6 +12,7 @@ import CardBody from "components/Card/CardBody";
 import CardFooter from "components/Card/CardFooter";
 // styles
 import componentsStyle from "assets/styles/views/componentsSections/termsStyle"
+import {Icon} from "@material-ui/core";
 
 class SectionTerms extends React.Component {
     render() {
@@ -38,8 +40,12 @@ class SectionTerms extends React.Component {
                                             ["İade", "5", "14", "İade ve değişim için bedel yüklenici tarafından kaşılanır."]
                                         ]}/>
                                     </CardBody>
-                                    <CardFooter>
-                                        <p className={classes.cardCategoryWhite}></p>
+                                    <CardFooter className={classes.footer}> 
+                                        <Fab 
+                                        size="small" 
+                                        color="primary">
+                                            <Icon>add</Icon>
+                                        </Fab>                                       
                                     </CardFooter>
                                 </Card>
                             </GridItem>

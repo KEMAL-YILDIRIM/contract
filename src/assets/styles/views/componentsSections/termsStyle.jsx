@@ -24,6 +24,9 @@ const termsStyles = {
         height: "17px",
         color: "#FFFFFF"
     },
+    footer:{
+        padding:"15px"
+    },
     ...boxShadow
 }
 
