@@ -96,13 +96,13 @@ legend {
 }
 
 a {
-  color: #9c27b0;
+  color: #2196f3;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover, a:focus {
-  color: #89229b;
+  color: #0d8aee;
   text-decoration: none;
 }
 
@@ -238,7 +238,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   border-radius: 100%;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  border: 1px solid #9c27b0;
+  border: 1px solid #2196f3;
   background: #fff;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
@@ -261,7 +261,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-origin {
   border-radius: 100%;
   -webkit-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
-  border: 1px solid #9c27b0;
+  border: 1px solid #2196f3;
   background: #fff;
   -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
           box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
@@ -480,11 +480,11 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .noUi-target.slider-primary .noUi-connect, .noUi-target.slider-primary.noUi-connect {
-  background-color: #9c27b0;
+  background-color: #2196f3;
 }
 
 .noUi-target.slider-primary .noUi-handle {
-  border-color: #9c27b0;
+  border-color: #2196f3;
 }
 
 .noUi-target.slider-info .noUi-connect, .noUi-target.slider-info.noUi-connect {
@@ -551,8 +551,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .rdt input.form-control {
   border: 0;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#9c27b0), to(#9c27b0)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
-  background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#297fb8), to(#297fb8)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+  background-image: linear-gradient(#297fb8, #297fb8), linear-gradient(#D2D2D2, #D2D2D2);
   background-size: 0 2px, 100% 1px;
   background-repeat: no-repeat;
   background-position: center bottom, center calc(100% - 1px);
@@ -578,8 +578,8 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 
 .rdt input.form-control:focus {
   outline: none;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#9c27b0), to(#9c27b0)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
-  background-image: linear-gradient(#9c27b0, #9c27b0), linear-gradient(#D2D2D2, #D2D2D2);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#297fb8), to(#297fb8)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+  background-image: linear-gradient(#297fb8, #297fb8), linear-gradient(#D2D2D2, #D2D2D2);
   background-size: 100% 2px, 100% 1px;
   -webkit-box-shadow: none;
           box-shadow: none;
@@ -673,10 +673,10 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 }
 
 .rdtDay.rdtToday.rdtActive, .rdtDay.rdtActive, .rdtDay.rdtActive:hover {
-  background-color: #9c27b0 !important;
+  background-color: #2196f3 !important;
   color: #fff;
-  -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(156, 39, 176, 0.6);
-          box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(156, 39, 176, 0.6);
+  -webkit-box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(33, 150, 243, 0.6);
+          box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(33, 150, 243, 0.6);
 }
 
 .rdtDays tr .dow {
@@ -753,7 +753,7 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .rdtPicker th.rdtNext,
 .rdtPicker th.rdtPrev,
 .rdtPicker .rdtTimeToggle {
-  color: #9c27b0;
+  color: #2196f3;
 }
 
 .rdtPrev span,
@@ -845,9 +845,9 @@ td.rdtYear:hover {
 }
 
 .rdtCounters .rdtCounter:last-child .rdtCount {
-  color: #9c27b0;
+  color: #2196f3;
   border-radius: 50%;
-  border: 1px solid #9c27b0;
+  border: 1px solid #2196f3;
 }
 
 .rdtCounterSeparator {
@@ -920,7 +920,7 @@ td.rdtYear:hover {
 .rdtMonths .rdtYear.rdtActive,
 .rdtYears .rdtMonth.rdtActive,
 .rdtYears .rdtYear.rdtActive {
-  background-color: #9c27b0 !important;
+  background-color: #2196f3 !important;
   color: #fff;
 }
 

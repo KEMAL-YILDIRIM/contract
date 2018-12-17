@@ -53,7 +53,8 @@ function CustomInput({ ...props }) {
   }
   return (
     <FormControl {...formControlProps} className={formControlClasses}>
-      {labelText !== undefined ? (
+      {labelText !== undefined 
+      ? (
         <InputLabel
           className={classes.labelRoot + " " + labelClasses}
           htmlFor={id}
@@ -61,7 +62,8 @@ function CustomInput({ ...props }) {
         >
           {labelText}
         </InputLabel>
-      ) : null}
+      ) 
+      : null}
       <Input
         classes={{
           input: inputClasses,

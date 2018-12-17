@@ -27,4 +27,4 @@ class template extends React.Component {
     }
 }
 
-export default withStyles()(template);
+export default withStyles(componentsStyles)(template);

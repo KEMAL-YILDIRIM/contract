@@ -32,6 +32,9 @@ function HeaderLinks({ ...props }) {
           }}
           buttonIcon={Apps}
           dropdownList={[
+            <a href="#description" className={classes.dropdownLink}>
+              Açıklama
+            </a>,
             <a href="#parties" className={classes.dropdownLink}>
               Taraflar
             </a>,
@@ -40,10 +43,10 @@ function HeaderLinks({ ...props }) {
             </a>,
             <a
               href=""
-              target="_blank"
+              target=""
               className={classes.dropdownLink}
             >
-              Şartname
+              Linkler
             </a>
           ]}
         />

@@ -17,6 +17,7 @@ import HeaderLinks from "components/Header/HeaderLinks.jsx";
 // sections for this page
 import SectionParties from "./Sections/SectionParties";
 import SectionTerms from "./Sections/SectionTerms";
+import SectionDescription from "./Sections/SectionDescription";
 
 // style
 import componentsStyle from "assets/styles/views/contractPage.jsx";
@@ -57,6 +58,9 @@ class Contract extends React.Component {
         </Parallax>
 
         <div className={classNames(classes.main, classes.mainRaised)}>
+          <SectionDescription/>          
+        </div>
+        <div className={classNames(classes.main, classes.sub)}>
           <SectionParties/>          
         </div>
         <div className={classNames(classes.main, classes.sub)}>
