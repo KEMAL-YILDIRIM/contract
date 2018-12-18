@@ -25,7 +25,13 @@ const descriptionStyles = {
         fontSize: "14px",
         fontWeight: "400",
         lineHeight: "1rem",
-        textTransform:"none"
+        textTransform: "none",
+        padding: "10px 6px 7px 0px",
+        margin: "0px"
+    },
+    gridItemDropdown: {
+        marginBottom:"17px",
+        paddingTop:"27px"
     },
     ...boxShadow
 }

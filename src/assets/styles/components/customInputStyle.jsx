@@ -1,7 +1,4 @@
-import {
-  colors,
-  defaultFont
-} from "assets/styles/contractStyles.jsx";
+import {colors, defaultFont} from "assets/styles/contractStyles.jsx";
 
 const customInputStyle = {
   disabled: {
@@ -79,6 +76,13 @@ const customInputStyle = {
       color: "#FFFFFF",
       opacity: "1"
     }
+  },
+  date: {
+    height: "2.063em"
+  },
+  shrinked: {
+    transform: 'translate(0, 1.5px) scale(0.75)',
+    transformOrigin: 'top left'
   }
 };
 
