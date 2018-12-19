@@ -15,7 +15,7 @@ import TableCell from "@material-ui/core/TableCell";
 import {Icon} from "@material-ui/core";
 
 // core components
-import Button from "../CustomButtons/Button"
+import Button from "components/CustomButtons/Button"
 
 // styles
 import tableStyle from "assets/styles/components/tableStyle.jsx";
@@ -63,13 +63,19 @@ function CustomTable({
                     </TableCell>
                   );
                 })}
-                <TableCell key={"edit"} className={classes.tableCell}>
-                  < Button className={classes.tableButton} color="transparent">
+                <TableCell className={classes.tableCell}>
+                  < Button 
+                  onClick={props.onEdit}
+                  className={classes.tableButton} 
+                  color="transparent">
                     <Icon className={classes.editButton}>edit_outline</Icon>
                   </Button>
                 </TableCell>
-                <TableCell key={"Sil"} className={classes.tableCell}>
-                  < Button className={classes.tableButton} color="transparent">
+                <TableCell className={classes.tableCell}>
+                  < Button 
+                  onClick={props.onDelete}
+                  className={classes.tableButton} 
+                  color="transparent">
                     <Icon className={classes.deleteButton}>delete_outline</Icon>
                   </Button>
                 </TableCell>

@@ -1,4 +1,4 @@
-import {boxShadow, container, title} from "assets/styles/contractStyles";
+import {boxShadow, container, title, colors} from "assets/styles/contractStyles";
 
 const termsStyles = {
     section: {
@@ -24,8 +24,20 @@ const termsStyles = {
         height: "17px",
         color: "#FFFFFF"
     },
-    footer:{
-        padding:"15px"
+    footer: {
+        padding: "15px"
+    },
+    buttonCancel: {
+        marginLeft: "1.6rem"
+    },
+    iconCancel: {
+        color: colors.danger
+    },
+    iconAccept: {
+        color: colors.success
+    },
+    insertRow: {
+        display:"flex"
     },
     ...boxShadow
 }
