@@ -30,8 +30,20 @@ class SectionTerms extends React.Component {
             show: false
         };
 
-        this.handleInsert = this
-            .handleInsert
+        this.addTerm = this
+            .addTerm
+            .bind(this);
+
+        this.editTerm = this
+            .editTerm
+            .bind(this);
+
+        this.deleteTerm = this
+            .deleteTerm
+            .bind(this);
+
+        this.showInsertRow = this
+            .showInsertRow
             .bind(this);
 
         this.handleCancel = this
@@ -43,23 +55,35 @@ class SectionTerms extends React.Component {
             .bind(this);
     }
 
-    addTerm() {}
+    addTerm() {
+        for (let i = 0; i < 4; i++) {
+            if (this.state.temporaryRow[i] === undefined) 
+                this.setState(state => state.temporaryRow[i] = '');
+            }
+        this.setState(state => state.termsData.push(state.temporaryRow));
+        this.handleCancel();
+    }
 
     editTerm() {}
 
-    deleteTerm() {}
+    deleteTerm() {
+        this.setState(state => state.termsData.pop());
+    }
 
-    handleInsert() {
-        this.setState(state => state.show = true)
+    showInsertRow() {
+        this.setState(state => state.show = true);
     }
 
     handleCancel() {
-        this.setState(state => state.show = false)
+        this.setState((state) => {
+            state.show = false;
+            state.temporaryRow = [];
+            return state;
+        });
     }
 
-    handleChange(event) {
-        debugger
-        console.log(event.target.value + JSON.stringify(event.target.dataset))
+    handleChange(item) {
+        this.setState(state => state.temporaryRow[item.index] = item.value);
     }
 
     render() {
@@ -67,23 +91,51 @@ class SectionTerms extends React.Component {
         const {classes} = this.props;
 
         const insertRow = (
-            <GridItem xs={12} sm={12} md={12} className={classes.insertRow}>
-                <GridItem xs={12} sm={6} md={2}>
+            <GridItem xs={12} sm={12} md={12} lg={12} className={classes.insertRow}>
+                <GridItem xs={12} sm={6} md={2} lg={2}>
                     <CustomInput
                         inputProps={{
-                        onChange: this.handleChange
+                        onChange: (event) => {
+                            this.handleChange({value: event.target.value, index: 0})
+                        }
                     }}
                         labelText="Konu"/>
                 </GridItem>
-                <GridItem xs={12} sm={3} md={1}><CustomInput labelText="Madde"/></GridItem>
-                <GridItem xs={12} sm={3} md={1}><CustomInput labelText="Sayfa"/></GridItem>
-                <GridItem xs={12} sm={12} md={5}><CustomInput labelText="Açıklama"/></GridItem>
-                <GridItem xs={12} sm={6} md={1}>
-                    <Button onClick={this.handleInsert} color="transparent">
-                        <Icon className={classes.iconAccept}>check_outline</Icon>
+                <GridItem xs={12} sm={3} md={1} lg={1}>
+                    <CustomInput
+                        inputProps={{
+                        onChange: (event) => {
+                            this.handleChange({value: event.target.value, index: 1})
+                        }
+                    }}
+                        labelText="Madde"/>
+                </GridItem>
+                <GridItem xs={12} sm={3} md={1} lg={1}>
+                    <CustomInput
+                        inputProps={{
+                        onChange: (event) => {
+                            this.handleChange({value: event.target.value, index: 2})
+                        }
+                    }}
+                        labelText="Sayfa"/></GridItem>
+                <GridItem xs={12} sm={12} md={5} lg={5}>
+                    <CustomInput
+                        inputProps={{
+                        onChange: (event) => {
+                            this.handleChange({value: event.target.value, index: 3})
+                        }
+                    }}
+                        labelText="Açıklama"/></GridItem>
+                <GridItem xs={12} sm={6} md={1} lg={1}>
+                    <Button
+                        onClick={this.addTerm}
+                        className={classes.buttonAccept}
+                        color="transparent">
+                        <Icon className={classes.iconAccept}>
+                            check_outline</Icon>
                     </Button>
                 </GridItem>
-                <GridItem xs={12} sm={6} md={1}>
+                <GridItem xs={12} sm={6} md={1} lg={1}>
                     <Button
                         onClick={this.handleCancel}
                         className={classes.buttonCancel}
@@ -115,18 +167,17 @@ class SectionTerms extends React.Component {
                                             onDelete={this.deleteTerm}
                                             onAdd={this.addTerm}
                                             tableHead={["Konu", "Madde", "Sayfa", "Açıklama"]}
-                                            tableData={this.state.termsData}/>
+                                            tableData={this.state.termsData}/> {this.state.show
+                                            ? insertRow
+                                            : emptyRow}
                                     </CardBody>
                                     <CardFooter className={classes.footer}>
                                         <GridContainer>
                                             <GridItem xs={12} sm={12} md={12}>
-                                                <Fab onClick={this.handleInsert} size="small" color="primary">
+                                                <Fab onClick={this.showInsertRow} size="small" color="primary">
                                                     <Icon>add</Icon>
                                                 </Fab>
                                             </GridItem>
-                                            {this.state.show
-                                                ? insertRow
-                                                : emptyRow}
                                         </GridContainer>
                                     </CardFooter>
                                 </Card>

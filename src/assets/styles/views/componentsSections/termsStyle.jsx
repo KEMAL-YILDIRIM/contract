@@ -25,10 +25,14 @@ const termsStyles = {
         color: "#FFFFFF"
     },
     footer: {
-        padding: "15px"
+        display: "flex",
+        justifyContent: "flex-end"
+    },
+    buttonAccept: {
+        margin: "1rem 0px"
     },
     buttonCancel: {
-        marginLeft: "1.6rem"
+        margin: "1rem 0px 0px 1.5rem"
     },
     iconCancel: {
         color: colors.danger
@@ -37,7 +41,8 @@ const termsStyles = {
         color: colors.success
     },
     insertRow: {
-        display:"flex"
+        padding: "1rem 0px",
+        display: "flex"
     },
     ...boxShadow
 }
