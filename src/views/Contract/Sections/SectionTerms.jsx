@@ -10,10 +10,9 @@ import Card from "components/Card/Card";
 import CardHeader from "components/Card/CardHeader";
 import CardBody from "components/Card/CardBody";
 import CardFooter from "components/Card/CardFooter";
-import CustomInput from "components/CustomInput/CustomInput"
-import Button from "components/CustomButtons/Button"
+import CustomInputRow from "components/CustomTable/CustomInputRow";
 // styles
-import componentsStyle from "assets/styles/views/componentsSections/termsStyle"
+import componentsStyle from "assets/styles/views/componentsSections/termsStyle";
 import {Icon} from "@material-ui/core";
 
 class SectionTerms extends React.Component {
@@ -64,7 +63,9 @@ class SectionTerms extends React.Component {
         this.handleCancel();
     }
 
-    editTerm() {}
+    editTerm(index) {
+        this.setState(state => state.termsData.pop())
+    }
 
     deleteTerm() {
         this.setState(state => state.termsData.pop());
@@ -88,64 +89,7 @@ class SectionTerms extends React.Component {
 
     render() {
 
-        const {classes} = this.props;
-
-        const insertRow = (
-            <GridItem xs={12} sm={12} md={12} lg={12} className={classes.insertRow}>
-                <GridItem xs={12} sm={6} md={2} lg={2}>
-                    <CustomInput
-                        inputProps={{
-                        onChange: (event) => {
-                            this.handleChange({value: event.target.value, index: 0})
-                        }
-                    }}
-                        labelText="Konu"/>
-                </GridItem>
-                <GridItem xs={12} sm={3} md={1} lg={1}>
-                    <CustomInput
-                        inputProps={{
-                        onChange: (event) => {
-                            this.handleChange({value: event.target.value, index: 1})
-                        }
-                    }}
-                        labelText="Madde"/>
-                </GridItem>
-                <GridItem xs={12} sm={3} md={1} lg={1}>
-                    <CustomInput
-                        inputProps={{
-                        onChange: (event) => {
-                            this.handleChange({value: event.target.value, index: 2})
-                        }
-                    }}
-                        labelText="Sayfa"/></GridItem>
-                <GridItem xs={12} sm={12} md={5} lg={5}>
-                    <CustomInput
-                        inputProps={{
-                        onChange: (event) => {
-                            this.handleChange({value: event.target.value, index: 3})
-                        }
-                    }}
-                        labelText="Açıklama"/></GridItem>
-                <GridItem xs={12} sm={6} md={1} lg={1}>
-                    <Button
-                        onClick={this.addTerm}
-                        className={classes.buttonAccept}
-                        color="transparent">
-                        <Icon className={classes.iconAccept}>
-                            check_outline</Icon>
-                    </Button>
-                </GridItem>
-                <GridItem xs={12} sm={6} md={1} lg={1}>
-                    <Button
-                        onClick={this.handleCancel}
-                        className={classes.buttonCancel}
-                        color="transparent">
-                        <Icon className={classes.iconCancel}>
-                            cancel_outline</Icon>
-                    </Button>
-                </GridItem>
-            </GridItem>
-        );
+        const {classes} = this.props;        
         const emptyRow = <div></div>;
 
         return (
@@ -165,10 +109,12 @@ class SectionTerms extends React.Component {
                                         <CustomTable
                                             onEdit={this.editTerm}
                                             onDelete={this.deleteTerm}
-                                            onAdd={this.addTerm}
                                             tableHead={["Konu", "Madde", "Sayfa", "Açıklama"]}
                                             tableData={this.state.termsData}/> {this.state.show
-                                            ? insertRow
+                                            ? <CustomInputRow
+                                            onChange={this.handleChange}
+                                            onAccept={this.addTerm}
+                                            onCancel={this.handleCancel}/>
                                             : emptyRow}
                                     </CardBody>
                                     <CardFooter className={classes.footer}>

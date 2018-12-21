@@ -1,8 +1,6 @@
 import React from "react";
-
 // prop types
 import PropTypes from "prop-types";
-
 // @material-ui/core components
 import withStyles from "@material-ui/core/styles/withStyles";
 import Table from "@material-ui/core/Table";
@@ -10,13 +8,11 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
-
 // @material-ui/icons
 import {Icon} from "@material-ui/core";
-
 // core components
-import Button from "components/CustomButtons/Button"
-
+import Button from "components/CustomButtons/Button";
+import CustomInputRow from "components/CustomTable/CustomInputRow";
 // styles
 import tableStyle from "assets/styles/components/tableStyle.jsx";
 import {colors} from "assets/styles/contractStyles";
@@ -24,7 +20,14 @@ import {colors} from "assets/styles/contractStyles";
 function CustomTable({
   ...props
 }) {
-  const {classes, tableHead, tableData, tableHeaderColor} = props;
+  const {
+    classes,
+    tableHead,
+    tableData,
+    tableHeaderColor,
+    editingRowIndex,
+    editing
+  } = props;
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
@@ -53,34 +56,30 @@ function CustomTable({
           )
           : null}
         <TableBody>
-          {tableData.map((prop, key) => {
-            return (
-              <TableRow key={key}>
-                {prop.map((prop, key) => {
-                  return (
-                    <TableCell className={classes.tableCell} key={key}>
-                      {prop}
-                    </TableCell>
-                  );
-                })}
-                <TableCell className={classes.tableCell}>
-                  < Button 
-                  onClick={props.onEdit}
-                  className={classes.tableButton} 
-                  color="transparent">
-                    <Icon className={classes.editButton}>edit_outline</Icon>
-                  </Button>
-                </TableCell>
-                <TableCell className={classes.tableCell}>
-                  < Button 
-                  onClick={props.onDelete}
-                  className={classes.tableButton} 
-                  color="transparent">
-                    <Icon className={classes.deleteButton}>delete_outline</Icon>
-                  </Button>
-                </TableCell>
-              </TableRow>
-            );
+          {tableData.map((rowProp, rowKey) => {
+            return (editing & rowKey === editingRowIndex
+              ? <CustomInputRow/>
+              : (
+                <TableRow key={rowKey}>
+                  {rowProp.map((cellProp, cellKey) => {
+                    return (
+                      <TableCell className={classes.tableCell} key={cellKey}>
+                        {cellProp}
+                      </TableCell>
+                    );
+                  })}
+                  <TableCell className={classes.tableCell}>
+                    < Button onClick={props.onEdit(rowKey)} className={classes.tableButton} color="transparent">
+                      <Icon className={classes.editButton}>edit_outline</Icon>
+                    </Button>
+                  </TableCell>
+                  <TableCell className={classes.tableCell}>
+                    < Button onClick={props.onDelete} className={classes.tableButton} color="transparent">
+                      <Icon className={classes.deleteButton}>delete_outline</Icon>
+                    </Button>
+                  </TableCell>
+                </TableRow>
+              ));
           })}
         </TableBody>
       </Table>
