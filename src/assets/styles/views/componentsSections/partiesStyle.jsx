@@ -24,6 +24,10 @@ const partiesStyles = {
         height: "17px",
         color: "#FFFFFF"
     },
+    party: {
+        marginLeft: "15px",
+        marginRight: "15px"
+    },
     ...boxShadow
 }
 

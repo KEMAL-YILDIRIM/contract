@@ -22,23 +22,23 @@ function CustomTable({
 }) {
   const {
     classes,
-    tableHead,
+    tableHeaderNames,
     tableData,
     tableHeaderColor,
     editingRowIndex,
-    editing
+    editingRowData
   } = props;
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
-        {tableHead !== undefined
+        {tableHeaderNames !== undefined
           ? (
             <TableHead
               style={{
               color: colors[tableHeaderColor]
             }}>
               <TableRow>
-                {tableHead.map((prop, key) => {
+                {tableHeaderNames.map((prop, key) => {
                   return (
                     <TableCell className={classes.tableHeadCell} key={key}>
                       {prop}
@@ -57,29 +57,41 @@ function CustomTable({
           : null}
         <TableBody>
           {tableData.map((rowProp, rowKey) => {
-            return (editing & rowKey === editingRowIndex
-              ? <CustomInputRow/>
-              : (
-                <TableRow key={rowKey}>
-                  {rowProp.map((cellProp, cellKey) => {
-                    return (
-                      <TableCell className={classes.tableCell} key={cellKey}>
-                        {cellProp}
-                      </TableCell>
-                    );
-                  })}
-                  <TableCell className={classes.tableCell}>
-                    < Button onClick={props.onEdit(rowKey)} className={classes.tableButton} color="transparent">
-                      <Icon className={classes.editButton}>edit_outline</Icon>
-                    </Button>
-                  </TableCell>
-                  <TableCell className={classes.tableCell}>
-                    < Button onClick={props.onDelete} className={classes.tableButton} color="transparent">
-                      <Icon className={classes.deleteButton}>delete_outline</Icon>
-                    </Button>
-                  </TableCell>
-                </TableRow>
-              ));
+            return (editingRowIndex === rowKey
+              ? <CustomInputRow
+                  key={rowKey}
+                  tableHeaderNames={tableHeaderNames}
+                  editingRowData={editingRowData}
+                  onChange={props.onChange}
+                  onAccept={props.onAccept}
+                  onCancel={props.onCancel}/>
+              : <TableRow key={rowKey}>
+                {rowProp.map((cellProp, cellKey) => {
+                  return (
+                    <TableCell className={classes.tableCell} key={cellKey}>
+                      {cellProp}
+                    </TableCell>
+                  );
+                })}
+                <TableCell className={classes.tableCell}>
+                  <Button
+                    onClick={(event) => {
+                    props.onEdit({index: rowKey})
+                  }}
+                    className={classes.tableButton}
+                    color="transparent">
+                    <Icon className={classes.editButton}>edit_outline</Icon>
+                  </Button>
+                </TableCell>
+                <TableCell className={classes.tableCell}>
+                  <Button
+                    onClick={props.onDelete}
+                    className={classes.tableButton}
+                    color="transparent">
+                    <Icon className={classes.deleteButton}>delete_outline</Icon>
+                  </Button>
+                </TableCell>
+              </TableRow>);
           })}
         </TableBody>
       </Table>
@@ -94,7 +106,7 @@ CustomTable.defaultProps = {
 CustomTable.propTypes = {
   classes: PropTypes.object.isRequired,
   tableHeaderColor: PropTypes.oneOf(Object.getOwnPropertyNames(colors)),
-  tableHead: PropTypes.arrayOf(PropTypes.string),
+  tableHeaderNames: PropTypes.arrayOf(PropTypes.string),
   tableData: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string))
 };
 

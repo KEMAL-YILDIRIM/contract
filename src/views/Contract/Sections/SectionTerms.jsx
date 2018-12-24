@@ -10,7 +10,6 @@ import Card from "components/Card/Card";
 import CardHeader from "components/Card/CardHeader";
 import CardBody from "components/Card/CardBody";
 import CardFooter from "components/Card/CardFooter";
-import CustomInputRow from "components/CustomTable/CustomInputRow";
 // styles
 import componentsStyle from "assets/styles/views/componentsSections/termsStyle";
 import {Icon} from "@material-ui/core";
@@ -25,8 +24,15 @@ class SectionTerms extends React.Component {
                 ],
                 ["İade", "5", "14", "İade ve değişim için bedel yüklenici tarafından kaşılanır."]
             ],
-            temporaryRow: [],
-            show: false
+            termsHeaderNames: [
+                "Konu", "Madde", "Sayfa", "Açıklama"
+            ],
+            emptyRow: [
+                "", "", "", ""
+            ],
+            inputRowMode: "add",
+            editingRowIndex: -1,
+            editingRowData: ["", "", "", ""]
         };
 
         this.addTerm = this
@@ -41,8 +47,8 @@ class SectionTerms extends React.Component {
             .deleteTerm
             .bind(this);
 
-        this.showInsertRow = this
-            .showInsertRow
+        this.handleAdd = this
+            .handleAdd
             .bind(this);
 
         this.handleCancel = this
@@ -56,41 +62,46 @@ class SectionTerms extends React.Component {
 
     addTerm() {
         for (let i = 0; i < 4; i++) {
-            if (this.state.temporaryRow[i] === undefined) 
-                this.setState(state => state.temporaryRow[i] = '');
+            if (this.state.editingRowData[i] === undefined) 
+                this.setState(state => state.editingRowData[i] = '');
             }
-        this.setState(state => state.termsData.push(state.temporaryRow));
+        this.setState(state => state.termsData.push(state.editingRowData));
         this.handleCancel();
     }
 
-    editTerm(index) {
-        this.setState(state => state.termsData.pop())
+    editTerm(item) {
+        this.setState(state => state.inputRowMode = "edit");
+        this.setState(state => state.editingRowData = state.termsData[item.index]);
+        this.setState(state => state.editingRowIndex = item.index);
     }
 
     deleteTerm() {
         this.setState(state => state.termsData.pop());
     }
 
-    showInsertRow() {
-        this.setState(state => state.show = true);
+    handleAdd() {
+        this.setState(state => state.inputRowMode = "add");
+        this.setState(state => state.editingRowIndex = (state.termsData.length));
+        this.setState(state => state.termsData.push(state.emptyRow));
     }
 
     handleCancel() {
         this.setState((state) => {
-            state.show = false;
-            state.temporaryRow = [];
-            return state;
+            state.editingRowIndex = -1
+            state.editingRowData = state.emptyRow;
         });
+        if (this.state.inputRowMode === "add") {
+            this.deleteTerm();
+        }
     }
 
     handleChange(item) {
-        this.setState(state => state.temporaryRow[item.index] = item.value);
+        this.setState(state => state.editingRowData[item.index] = item.value);
     }
 
     render() {
 
-        const {classes} = this.props;        
-        const emptyRow = <div></div>;
+        const {classes} = this.props;
 
         return (
             <div className={classes.section} id="terms">
@@ -107,20 +118,20 @@ class SectionTerms extends React.Component {
                                     </CardHeader>
                                     <CardBody>
                                         <CustomTable
-                                            onEdit={this.editTerm}
-                                            onDelete={this.deleteTerm}
-                                            tableHead={["Konu", "Madde", "Sayfa", "Açıklama"]}
-                                            tableData={this.state.termsData}/> {this.state.show
-                                            ? <CustomInputRow
+                                            editingRowIndex={this.state.editingRowIndex}
+                                            editingRowData={this.state.editingRowData}
                                             onChange={this.handleChange}
                                             onAccept={this.addTerm}
-                                            onCancel={this.handleCancel}/>
-                                            : emptyRow}
+                                            onEdit={this.editTerm}
+                                            onDelete={this.deleteTerm}
+                                            onCancel={this.handleCancel}
+                                            tableHeaderNames={this.state.termsHeaderNames}
+                                            tableData={this.state.termsData}/>
                                     </CardBody>
                                     <CardFooter className={classes.footer}>
                                         <GridContainer>
                                             <GridItem xs={12} sm={12} md={12}>
-                                                <Fab onClick={this.showInsertRow} size="small" color="primary">
+                                                <Fab onClick={this.handleAdd} size="small" color="primary">
                                                     <Icon>add</Icon>
                                                 </Fab>
                                             </GridItem>

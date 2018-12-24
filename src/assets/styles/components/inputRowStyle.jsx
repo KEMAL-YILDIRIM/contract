@@ -1,14 +1,16 @@
-import {boxShadow, colors} from "assets/styles/contractStyles";
+import {boxShadow, colors, defaultFont} from "assets/styles/contractStyles";
 
 const inputRowStyle = {
-    buttonAccept: {
-        margin: "1rem 0px"
-    },
-    buttonCancel: {
-        margin: "1rem 0px 0px 1.5rem"
+    tableButton: {
+        padding: "15px"
     },
     iconCancel: {
         color: colors.danger
+    },
+    tableCell: {
+      ...defaultFont,
+      lineHeight: "1.42857143",
+      padding: "12px 8px"
     },
     iconAccept: {
         color: colors.success

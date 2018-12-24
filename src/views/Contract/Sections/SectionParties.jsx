@@ -23,7 +23,7 @@ class SectionParties extends React.Component {
           <div className={classes.title}>
             <h2>Taraflar</h2>
           </div>
-          <div>
+          <div className={classes.party}>
             <div className={classes.title}>
               <h3>İşveren</h3>
             </div>
@@ -91,7 +91,7 @@ class SectionParties extends React.Component {
               </GridItem>
             </GridContainer>
           </div>
-          <div>
+          <div className={classes.party}>
             <div className={classes.title}>
               <h3>Yüklenici</h3>
             </div>
