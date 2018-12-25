@@ -55,48 +55,54 @@ class SectionTerms extends React.Component {
             .handleCancel
             .bind(this);
 
-        this.handleChange = this
-            .handleChange
+        this.handleInputChange = this
+            .handleInputChange
             .bind(this);
     }
 
     addTerm() {
-        for (let i = 0; i < 4; i++) {
-            if (this.state.editingRowData[i] === undefined) 
-                this.setState(state => state.editingRowData[i] = '');
-            }
-        this.setState(state => state.termsData.push(state.editingRowData));
-        this.handleCancel();
+        const coppyRowData = [...this.state.editingRowData];
+        const coppyArray = [...this.state.termsData];
+        coppyArray.splice(coppyArray.lengt, 1);
+        const newArray = coppyArray.concat([this.state.editingRowData]);
+        this.setState({termsData: newArray, editingRowIndex: -1, editingRowData: coppyRowData});
     }
 
     editTerm(item) {
-        this.setState(state => state.inputRowMode = "edit");
-        this.setState(state => state.editingRowData = state.termsData[item.index]);
-        this.setState(state => state.editingRowIndex = item.index);
+        const coppyArray = this.state.editingRowData;
+        const arraySize = coppyArray.length;
+        coppyArray.splice(0, arraySize, this.state.termsData[item.index]);
+        this.setState({inputRowMode: "edit", editingRowData: coppyArray, editingRowIndex: item.index});
     }
 
-    deleteTerm() {
-        this.setState(state => state.termsData.pop());
+    deleteTerm(item) {
+        const coppyArray = [...this.state.termsData];
+        coppyArray.splice(item.index, 1);
+        this.setState({termsData: coppyArray});
     }
 
     handleAdd() {
-        this.setState(state => state.inputRowMode = "add");
-        this.setState(state => state.editingRowIndex = (state.termsData.length));
-        this.setState(state => state.termsData.push(state.emptyRow));
+        const dataLength = this.state.termsData.length;
+        const coppyArray = [...this.state.termsData];
+        const newArray = coppyArray.concat([this.state.emptyRow]);
+        this.setState({inputRowMode: "add", editingRowIndex: dataLength, termsData: newArray});
     }
 
     handleCancel() {
-        this.setState((state) => {
-            state.editingRowIndex = -1
-            state.editingRowData = state.emptyRow;
-        });
+        const temporaryTermsData = [...this.state.termsData];
         if (this.state.inputRowMode === "add") {
-            this.deleteTerm();
+            temporaryTermsData.pop();
         }
+
+        let temporaryRowData = [...this.state.editingRowData];
+        Object.assign(temporaryRowData, this.state.emptyRow);
+        this.setState({editingRowIndex: -1, editingRowData: temporaryRowData, termsData: temporaryTermsData});
     }
 
-    handleChange(item) {
-        this.setState(state => state.editingRowData[item.index] = item.value);
+    handleInputChange(item) {
+        const coppyArray = [...this.state.editingRowData];
+        const newArray = coppyArray.concat([item.value]);
+        this.setState({editingRowData: coppyArray});
     }
 
     render() {
@@ -120,7 +126,7 @@ class SectionTerms extends React.Component {
                                         <CustomTable
                                             editingRowIndex={this.state.editingRowIndex}
                                             editingRowData={this.state.editingRowData}
-                                            onChange={this.handleChange}
+                                            onChange={this.handleInputChange}
                                             onAccept={this.addTerm}
                                             onEdit={this.editTerm}
                                             onDelete={this.deleteTerm}

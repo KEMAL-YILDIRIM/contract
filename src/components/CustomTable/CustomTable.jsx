@@ -20,14 +20,7 @@ import {colors} from "assets/styles/contractStyles";
 function CustomTable({
   ...props
 }) {
-  const {
-    classes,
-    tableHeaderNames,
-    tableData,
-    tableHeaderColor,
-    editingRowIndex,
-    editingRowData
-  } = props;
+  const {classes, tableHeaderNames, tableData, tableHeaderColor, editingRowIndex} = props;
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
@@ -56,27 +49,28 @@ function CustomTable({
           )
           : null}
         <TableBody>
-          {tableData.map((rowProp, rowKey) => {
-            return (editingRowIndex === rowKey
+          {tableData.map((rowData, rowIndex) => {
+            return (editingRowIndex === rowIndex
               ? <CustomInputRow
-                  key={rowKey}
+                  key={rowIndex}
+                  rowKey={rowIndex}
                   tableHeaderNames={tableHeaderNames}
-                  editingRowData={editingRowData}
+                  editingRowData={rowData}
                   onChange={props.onChange}
                   onAccept={props.onAccept}
                   onCancel={props.onCancel}/>
-              : <TableRow key={rowKey}>
-                {rowProp.map((cellProp, cellKey) => {
+              : <TableRow key={rowIndex}>
+                {rowData.map((cellData, cellIndex) => {
                   return (
-                    <TableCell className={classes.tableCell} key={cellKey}>
-                      {cellProp}
+                    <TableCell className={classes.tableCell} key={cellIndex}>
+                      {cellData}
                     </TableCell>
                   );
                 })}
                 <TableCell className={classes.tableCell}>
                   <Button
                     onClick={(event) => {
-                    props.onEdit({index: rowKey})
+                    props.onEdit({index: rowIndex})
                   }}
                     className={classes.tableButton}
                     color="transparent">
@@ -85,7 +79,9 @@ function CustomTable({
                 </TableCell>
                 <TableCell className={classes.tableCell}>
                   <Button
-                    onClick={props.onDelete}
+                    onClick={(event) => {
+                    props.onDelete({index: rowIndex})
+                  }}
                     className={classes.tableButton}
                     color="transparent">
                     <Icon className={classes.deleteButton}>delete_outline</Icon>

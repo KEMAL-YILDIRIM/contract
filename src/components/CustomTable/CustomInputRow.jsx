@@ -16,9 +16,9 @@ import inputRowStyle from "assets/styles/components/inputRowStyle.jsx";
 function CustomInputRow({
     ...props
 }) {
-    const {classes, editingRowData, tableHeaderNames, key} = props;
+    const {classes, editingRowData, tableHeaderNames, rowKey} = props;
     return (
-        <TableRow key={key}>
+        <TableRow key={rowKey}>
             {editingRowData.map((cellProp, cellKey) => {
                 return (
                     <TableCell className={classes.tableCell} key={cellKey}>
@@ -28,7 +28,6 @@ function CustomInputRow({
                                 props.onChange({value: event.target.value, index: cellKey})
                             }
                         }}
-                            value={editingRowData[cellKey]}
                             labelText={tableHeaderNames[cellKey]}/>
                     </TableCell>
                 );
