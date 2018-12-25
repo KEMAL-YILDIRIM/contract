@@ -30,7 +30,7 @@ class SectionTerms extends React.Component {
             emptyRow: [
                 "", "", "", ""
             ],
-            inputRowMode: "add",
+            inputRowMode: "default",
             editingRowIndex: -1,
             editingRowData: ["", "", "", ""]
         };
@@ -60,49 +60,62 @@ class SectionTerms extends React.Component {
             .bind(this);
     }
 
-    addTerm() {
-        const coppyRowData = [...this.state.editingRowData];
-        const coppyArray = [...this.state.termsData];
-        coppyArray.splice(coppyArray.lengt, 1);
-        const newArray = coppyArray.concat([this.state.editingRowData]);
-        this.setState({termsData: newArray, editingRowIndex: -1, editingRowData: coppyRowData});
+    addTerm(item) {
+
+        let termsDataInstance = this.state.termsData;
+        termsDataInstance.splice(item.index, 1, this.state.editingRowData);
+
+        //clear editing row
+        const rowDataInstance = this.state.editingRowData;
+        const newRowDataInstance = rowDataInstance.map((_item, _index) => {
+            return _item = "";
+        });
+
+        this.setState({inputRowMode: "default", termsData: termsDataInstance, editingRowIndex: -1, editingRowData: newRowDataInstance});
     }
 
     editTerm(item) {
-        const coppyArray = this.state.editingRowData;
-        const arraySize = coppyArray.length;
-        coppyArray.splice(0, arraySize, this.state.termsData[item.index]);
-        this.setState({inputRowMode: "edit", editingRowData: coppyArray, editingRowIndex: item.index});
+        const rowDataInstance = this.state.editingRowData;
+        const termsDataInstance = this.state.termsData;
+        const arraySize = rowDataInstance.length;
+        const newRowDataInstance = rowDataInstance.map((_item, _index) => {
+            return _item = termsDataInstance[item.index][_index];
+        });
+        this.setState({inputRowMode: "edit", editingRowData: newRowDataInstance, editingRowIndex: item.index});
     }
 
     deleteTerm(item) {
-        const coppyArray = [...this.state.termsData];
-        coppyArray.splice(item.index, 1);
-        this.setState({termsData: coppyArray});
+        let termsDataInstance = this.state.termsData;
+        termsDataInstance.splice(item.index, 1);
+        this.setState({termsData: termsDataInstance});
     }
 
     handleAdd() {
+        if (this.state.inputRowMode !== "default") 
+            return;
         const dataLength = this.state.termsData.length;
-        const coppyArray = [...this.state.termsData];
-        const newArray = coppyArray.concat([this.state.emptyRow]);
-        this.setState({inputRowMode: "add", editingRowIndex: dataLength, termsData: newArray});
+        let termsDataInstance = this.state.termsData;
+        termsDataInstance.splice(dataLength, 0, this.state.emptyRow);
+        this.setState({inputRowMode: "add", editingRowIndex: dataLength, termsData: termsDataInstance});
     }
 
-    handleCancel() {
-        const temporaryTermsData = [...this.state.termsData];
+    handleCancel(item) {
+        let termsDataInstance = this.state.termsData;
         if (this.state.inputRowMode === "add") {
-            temporaryTermsData.pop();
+            termsDataInstance.splice(item.index, 1);
         }
 
-        let temporaryRowData = [...this.state.editingRowData];
-        Object.assign(temporaryRowData, this.state.emptyRow);
-        this.setState({editingRowIndex: -1, editingRowData: temporaryRowData, termsData: temporaryTermsData});
+        const rowDataInstance = this.state.editingRowData;
+        const newRowDataInstance = rowDataInstance.map((_item, _index) => {
+            return _item = "";
+        });
+        this.setState({inputRowMode: "default", editingRowIndex: -1, editingRowData: newRowDataInstance, termsData: termsDataInstance});
     }
 
     handleInputChange(item) {
-        const coppyArray = [...this.state.editingRowData];
-        const newArray = coppyArray.concat([item.value]);
-        this.setState({editingRowData: coppyArray});
+        let rowDataInstance = this.state.editingRowData;
+        rowDataInstance.splice(item.index, 1, item.value);
+        this.setState({editingRowData: rowDataInstance});
     }
 
     render() {

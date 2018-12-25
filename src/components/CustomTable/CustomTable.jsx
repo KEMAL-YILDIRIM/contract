@@ -20,7 +20,7 @@ import {colors} from "assets/styles/contractStyles";
 function CustomTable({
   ...props
 }) {
-  const {classes, tableHeaderNames, tableData, tableHeaderColor, editingRowIndex} = props;
+  const {classes, tableHeaderNames, tableData, tableHeaderColor, editingRowIndex, editingRowData} = props;
   return (
     <div className={classes.tableResponsive}>
       <Table className={classes.table}>
@@ -55,7 +55,7 @@ function CustomTable({
                   key={rowIndex}
                   rowKey={rowIndex}
                   tableHeaderNames={tableHeaderNames}
-                  editingRowData={rowData}
+                  editingRowData={editingRowData}
                   onChange={props.onChange}
                   onAccept={props.onAccept}
                   onCancel={props.onCancel}/>

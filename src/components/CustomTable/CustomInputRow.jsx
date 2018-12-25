@@ -19,22 +19,23 @@ function CustomInputRow({
     const {classes, editingRowData, tableHeaderNames, rowKey} = props;
     return (
         <TableRow key={rowKey}>
-            {editingRowData.map((cellProp, cellKey) => {
+            {editingRowData.map((cellData, cellIndex) => {
                 return (
-                    <TableCell className={classes.tableCell} key={cellKey}>
+                    <TableCell className={classes.tableCell} key={cellIndex}>
                         <CustomInput
                             inputProps={{
                             onChange: (event) => {
-                                props.onChange({value: event.target.value, index: cellKey})
-                            }
-                        }}
-                            labelText={tableHeaderNames[cellKey]}/>
+                                props.onChange({value: event.target.value, index: cellIndex})
+                            },
+                            value: cellData
+                            }}
+                            labelText={tableHeaderNames[cellIndex]}/>
                     </TableCell>
                 );
             })}
             <TableCell className={classes.tableCell} key={editingRowData.length + 1}>
                 <Button
-                    onClick={props.onAccept}
+                    onClick={(event)=>{props.onAccept({index:rowKey})}}
                     className={classes.tableButton}
                     color="transparent">
                     <Icon className={classes.iconAccept}>
@@ -43,7 +44,7 @@ function CustomInputRow({
             </TableCell>
             <TableCell className={classes.tableCell} key={editingRowData.length + 2}>
                 <Button
-                    onClick={props.onCancel}
+                    onClick={(event)=>{props.onCancel({index:rowKey})}}
                     className={classes.tableButton}
                     color="transparent">
                     <Icon className={classes.iconCancel}>
