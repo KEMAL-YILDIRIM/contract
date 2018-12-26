@@ -18,6 +18,7 @@ import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import SectionParties from "./Sections/SectionParties";
 import SectionTerms from "./Sections/SectionTerms";
 import SectionDescription from "./Sections/SectionDescription";
+import SectionFiles from "./Sections/SectionFiles";
 
 // style
 import componentsStyle from "assets/styles/views/contractPage.jsx";
@@ -36,7 +37,7 @@ class Contract extends React.Component {
           fixed
           color="transparent"
           changeColorOnScroll={{
-          height: 400,
+          height: 200,
           color: "white"
         }}
           {...rest}/>
@@ -65,6 +66,9 @@ class Contract extends React.Component {
         </div>
         <div className={classNames(classes.main, classes.sub)}>
           <SectionTerms/>          
+        </div>
+        <div className={classNames(classes.main, classes.sub)}>
+          <SectionFiles/>          
         </div>
 
         <Footer/>

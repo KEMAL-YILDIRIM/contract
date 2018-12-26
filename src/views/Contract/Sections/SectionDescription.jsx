@@ -17,7 +17,7 @@ class Description extends React.Component {
             <div className={classes.section} id="template">
                 <div className={classes.container}>
                     <div className={classes.title}>
-                        <h2>Açıklama</h2>
+                        <h2>Genel</h2>
                     </div>
                     <div>
                         <GridContainer>

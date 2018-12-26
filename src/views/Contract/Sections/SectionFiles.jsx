@@ -4,18 +4,17 @@ import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
-import FileUpload from '.FileUpload'
 // style
-import componentsStyles from "assets/styles/views/componentsSections/"
+import componentsStyles from "assets/styles/views/componentsSections/filesStyle"
 
-class template extends React.Component {
+class File extends React.Component {
     render() {
         const {classes} = this.props;
         return (
             <div className={classes.section} id="template">
                 <div className={classes.container}>
                     <div className={classes.title}>
-                        <h2>template</h2>
+                        <h2>Dökümanlar</h2>
                     </div>
                     <div>
                         <GridContainer>
@@ -28,4 +27,4 @@ class template extends React.Component {
     }
 }
 
-export default withStyles(componentsStyles)(template);
+export default withStyles(componentsStyles)(File);

@@ -35,8 +35,8 @@ class SectionTerms extends React.Component {
             editingRowData: ["", "", "", ""]
         };
 
-        this.addTerm = this
-            .addTerm
+        this.insertTerm = this
+            .insertTerm
             .bind(this);
 
         this.editTerm = this
@@ -60,7 +60,7 @@ class SectionTerms extends React.Component {
             .bind(this);
     }
 
-    addTerm(item) {
+    insertTerm(item) {
 
         let termsDataInstance = this.state.termsData;
         termsDataInstance.splice(item.index, 1, this.state.editingRowData);
@@ -75,9 +75,10 @@ class SectionTerms extends React.Component {
     }
 
     editTerm(item) {
+        if (this.state.inputRowMode !== "default") 
+            return;
         const rowDataInstance = this.state.editingRowData;
         const termsDataInstance = this.state.termsData;
-        const arraySize = rowDataInstance.length;
         const newRowDataInstance = rowDataInstance.map((_item, _index) => {
             return _item = termsDataInstance[item.index][_index];
         });
@@ -85,6 +86,8 @@ class SectionTerms extends React.Component {
     }
 
     deleteTerm(item) {
+        if (this.state.inputRowMode !== "default") 
+            return;
         let termsDataInstance = this.state.termsData;
         termsDataInstance.splice(item.index, 1);
         this.setState({termsData: termsDataInstance});
@@ -126,7 +129,7 @@ class SectionTerms extends React.Component {
             <div className={classes.section} id="terms">
                 <div className={classes.container}>
                     <div className={classes.title}>
-                        <h2>Şartlar</h2>
+                        <h2>Maddeler</h2>
                     </div>
                     <div>
                         <GridContainer>
@@ -140,7 +143,7 @@ class SectionTerms extends React.Component {
                                             editingRowIndex={this.state.editingRowIndex}
                                             editingRowData={this.state.editingRowData}
                                             onChange={this.handleInputChange}
-                                            onAccept={this.addTerm}
+                                            onAccept={this.insertTerm}
                                             onEdit={this.editTerm}
                                             onDelete={this.deleteTerm}
                                             onCancel={this.handleCancel}

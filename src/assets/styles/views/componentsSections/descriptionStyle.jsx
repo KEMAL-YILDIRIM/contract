@@ -2,7 +2,7 @@ import {boxShadow, container, title} from "assets/styles/contractStyles";
 
 const descriptionStyles = {
     section: {
-        padding: "70px 0"
+        padding: "20px 0"
     },
     container,
     title: {
