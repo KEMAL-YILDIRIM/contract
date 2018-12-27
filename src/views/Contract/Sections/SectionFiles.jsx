@@ -4,12 +4,38 @@ import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
+import {DropTarget, DropTargetConnector, ConnectDropTarget, DropTargetMonitor} from 'react-dnd'
 // style
 import componentsStyles from "assets/styles/views/componentsSections/filesStyle"
 
-class File extends React.Component {
+export interface ContainerState {
+    droppedFiles : any[]
+    fileTypes: string[]
+}
+
+class File extends React.Component < {},
+ContainerState > {
+    constructor(props) {
+        super(props);
+        this.state = {
+            droppedFiles: [],
+            fileTypes: []
+        };
+    }
+
+    handleFileDrop = (item : any, monitor : DropTargetMonitor) => {
+        if (monitor) {
+            const droppedFiles = monitor
+                .getItem()
+                .files;
+            this.setState({droppedFiles});
+        }
+    }
+
     render() {
         const {classes} = this.props;
+        const {fileTypes, droppedFiles} = this.state
+
         return (
             <div className={classes.section} id="template">
                 <div className={classes.container}>
@@ -18,7 +44,10 @@ class File extends React.Component {
                     </div>
                     <div>
                         <GridContainer>
-                            <GridItem xs={12} sm={12} md={2} lg={2}></GridItem>
+                            <GridItem xs={12} sm={12} md={2} lg={2}>
+                                <TargetBox accepts={fileTypes} onDrop={this.handleFileDrop}/>
+                                <FileList files={droppedFiles}/>
+                            </GridItem>
                         </GridContainer>
                     </div>
                 </div>

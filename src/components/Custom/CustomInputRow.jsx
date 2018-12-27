@@ -8,8 +8,8 @@ import TableCell from "@material-ui/core/TableCell";
 // @material-ui/icons
 import {Icon} from "@material-ui/core";
 // core components
-import Button from "components/CustomButtons/Button";
-import CustomInput from "components/CustomInput/CustomInput"
+import Button from "./Button";
+import CustomInput from "./CustomInput"
 // styles
 import inputRowStyle from "assets/styles/components/inputRowStyle.jsx";
 

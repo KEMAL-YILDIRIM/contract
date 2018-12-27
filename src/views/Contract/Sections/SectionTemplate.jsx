@@ -4,7 +4,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
-import FileUpload from '.FileUpload'
 // style
 import componentsStyles from "assets/styles/views/componentsSections/"
 

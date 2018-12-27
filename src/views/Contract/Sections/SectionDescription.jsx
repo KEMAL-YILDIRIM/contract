@@ -4,9 +4,9 @@ import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
-import CustomInput from "components/CustomInput/CustomInput";
-import CustomDropdown from "components/CustomDropdown/CustomDropdown";
-import CustomDatePicker from "components/CustomDatePicker/CustomDatePicker";
+import CustomInput from "components/Custom/CustomInput";
+import CustomDropdown from "components/Custom/CustomDropdown";
+import CustomDatePicker from "components/Custom/CustomDatePicker";
 // style
 import componentsStyles from "assets/styles/views/componentsSections/descriptionStyle";
 

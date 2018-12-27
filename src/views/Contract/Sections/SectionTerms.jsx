@@ -5,7 +5,7 @@ import Fab from "@material-ui/core/Fab";
 // core components
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
-import CustomTable from "components/CustomTable/CustomTable";
+import CustomTable from "components/Custom/CustomTable";
 import Card from "components/Card/Card";
 import CardHeader from "components/Card/CardHeader";
 import CardBody from "components/Card/CardBody";

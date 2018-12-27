@@ -11,8 +11,8 @@ import TableCell from "@material-ui/core/TableCell";
 // @material-ui/icons
 import {Icon} from "@material-ui/core";
 // core components
-import Button from "components/CustomButtons/Button";
-import CustomInputRow from "components/CustomTable/CustomInputRow";
+import Button from "./Button";
+import CustomInputRow from "./CustomInputRow";
 // styles
 import tableStyle from "assets/styles/components/tableStyle.jsx";
 import {colors} from "assets/styles/contractStyles";

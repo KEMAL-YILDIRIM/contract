@@ -10,7 +10,7 @@ import Phone from "@material-ui/icons/Phone";
 // core components
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
-import CustomInput from "components/CustomInput/CustomInput";
+import CustomInput from "components/Custom/CustomInput";
 // styles
 import componentsStyle from "assets/styles/views/componentsSections/partiesStyle";
 
