@@ -4,23 +4,38 @@ export interface FileListProps {
     files : any[]
 }
 
-default class FileList extends Component < FileListProps > {
+class FileList extends React.Component<FileListProps> {
+
     checkFiles = (files) => {
         let response = '';
         if (files.length === 0) {
-            reponse = <div>
+            response = <div>
                 Lütfen yüklemek istediğiniz dosyaları buraya bırakın.
             </div>;
         } else {
-            response = <div>Dosyalar bulundu.</div >;
+            response = <div>{this.list(files)}</div>;
         }
         return response;
     }
 
-    list = 
+    list = (files) => {
+        files.map(file =>< li key = {
+            file.name
+        } > {
+            file.name
+        }
+        _ {file.type}--yukleme tarihi : {
+            Date.now()
+        }
+        --boyutu : {
+            file.size
+        } < /li>)
+    }
 
     render() {
         const {files} = this.props;
         return (this.checkFiles(files));
     }
 }
+
+export default FileList;
