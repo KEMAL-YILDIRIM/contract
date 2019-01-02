@@ -18,7 +18,7 @@ import HeaderLinks from "components/Header/HeaderLinks.jsx";
 import SectionParties from "./Sections/SectionParties";
 import SectionTerms from "./Sections/SectionTerms";
 import SectionDescription from "./Sections/SectionDescription";
-import SectionFiles from "./Sections/SectionFiles";
+import SectionDocuments from "./Sections/SectionDocuments";
 
 // style
 import componentsStyle from "assets/styles/views/contractPage.jsx";
@@ -68,7 +68,7 @@ class Contract extends React.Component {
           <SectionTerms/>          
         </div>
         <div className={classNames(classes.main, classes.sub)}>
-          <SectionFiles/>          
+          <SectionDocuments/>          
         </div>
 
         <Footer/>

@@ -19,9 +19,9 @@ class FileList extends React.Component<FileListProps> {
     }
 
     list = (files) => {
-        files.map(file =>< li key = {
+        files.map(file =><li key = {
             file.name
-        } > {
+        }>{
             file.name
         }
         _ {file.type}--yukleme tarihi : {
@@ -29,7 +29,7 @@ class FileList extends React.Component<FileListProps> {
         }
         --boyutu : {
             file.size
-        } < /li>)
+        }</li>)
     }
 
     render() {
