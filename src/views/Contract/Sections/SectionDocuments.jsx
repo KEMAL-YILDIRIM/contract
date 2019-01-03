@@ -4,7 +4,6 @@ import withStyles from "@material-ui/core/styles/withStyles";
 // core components
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
-import FileList from "components/FileList/FileList";
 import DropBoxArea from "components/DropBoxArea/DropBoxArea";
 // style
 import componentsStyles from "assets/styles/views/componentsSections/filesStyle";
@@ -17,23 +16,12 @@ class SectionDocuments extends React.Component < {},
 ContainerState > {
     constructor(props) {
         super(props);
-        this.state = {
-            droppedFiles: []
+        this.state = {            
         };
-    }
-
-    handleFileDrop = (item : any, monitor : DropTargetMonitor) => {
-        if (monitor) {
-            const droppedFiles = monitor
-                .getItem()
-                .files;
-            this.setState({droppedFiles});
-        }
     }
 
     render() {
         const {classes} = this.props;
-        const {droppedFiles} = this.state;
 
         return (
             <div className={classes.section} id="template">
@@ -43,8 +31,8 @@ ContainerState > {
                     </div>
                     <div>
                         <GridContainer>
-                            <GridItem xs={12} sm={12} md={2} lg={2}>
-                                
+                            <GridItem xs={12} sm={12} md={12} lg={12}>
+                                <DropBoxArea/>
                             </GridItem>
                         </GridContainer>
                     </div>
